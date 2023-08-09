@@ -16,14 +16,11 @@ Seções do portfólio
 
 ## 🛠️ Tecnologias
 Portfólio desenvolvido utilizando as seguintes tecnologias:
-- HTML
-- CSS
-- JavaScript
-- React.JS
 - Next.JS
+- TypeScript
 - Sass
 
 ---
 
-## Author 
+## Autor
 Luiz Teles
