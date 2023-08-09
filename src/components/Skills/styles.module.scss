@@ -1,0 +1,51 @@
+@import '../../sass/variables.scss';
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1.5rem;
+
+  .skills__skill {
+    background-color: $color9;
+    border-radius: 1rem;
+    width: 20rem;
+    height: 20rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transform-style: preserve-3d;
+
+    div {
+      height: 10rem;
+      width: 10rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      transform: translateZ(35px);
+
+      svg {
+        font-size: 10rem;
+        color: $color7;
+      }
+    }
+
+    p {
+      font-size: 1.7rem;
+      transform: translateZ(35px);
+    }
+  }
+
+  div[data-skill='Next.JS'] {
+    svg {
+      font-size: 8rem;
+    }
+  }
+}

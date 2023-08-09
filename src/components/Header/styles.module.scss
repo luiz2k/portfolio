@@ -1,0 +1,85 @@
+@import '../../sass/variables';
+@import '../../sass/mixins';
+
+.header {
+  background-color: $color4;
+  height: 6rem;
+  box-shadow: $shadow2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  .header__nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+
+      li {
+        a {
+          text-decoration: none;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+
+          background-color: $color1;
+          color: white;
+          padding: 0.5rem;
+          border-radius: 1rem;
+          font-size: 1.1rem;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:hover {
+            background-color: $color2;
+          }
+
+          svg {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(sm) {
+  .header {
+    .header__nav {
+      ul {
+        gap: 1rem;
+
+        li {
+          a {
+            flex-direction: row;
+
+            padding: 1rem;
+
+            font-size: 1.7rem;
+
+            svg {
+              font-size: 1.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(md) {
+  .header {
+    top: 0;
+  }
+}
