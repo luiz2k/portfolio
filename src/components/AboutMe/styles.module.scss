@@ -4,8 +4,6 @@
   display: grid;
   gap: 2.5rem;
 
-  padding-bottom: 15rem;
-
   .aboutMe__myPicture {
     display: flex;
     justify-content: center;
@@ -140,6 +138,8 @@
   .aboutMe {
     grid-template-columns: minmax(25rem, 35rem) minmax(25rem, 35rem);
     gap: 3.3rem;
+
+    padding-bottom: 15rem;
 
     .aboutMe__Text {
       p,
