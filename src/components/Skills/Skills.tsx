@@ -24,8 +24,6 @@ export default function Skills() {
     window.addEventListener('resize', device);
   }, []);
 
-  const w = window.matchMedia('(max-width: 1024px)').matches;
-
   return (
     <section id="skills">
       <div>
