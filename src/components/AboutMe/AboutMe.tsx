@@ -24,9 +24,12 @@ export default function AboutMe() {
             <p></p>
             <hr />
             <p>
-              Estudante de Análise e Desenvolvimento de Sistemas, em busca da
-              primeira oportunidade como desenvolvedor front-end. Sou focado e
-              prestativo.
+              Estudante de Análise e Desenvolvimento de Sistemas (ADS), e estou
+              em busca da minha primeira oportunidade como desenvolvedor
+              front-end. Sou uma pessoa focado, prestativo e tenho
+              comprometimento com o trabalho. Gosto bastante de estudar e
+              aprender sobre novas tecnologias, além de estar sempre atualizado
+              com as novidades.
             </p>
             <hr />
             <div>
