@@ -1,16 +1,16 @@
-import { icons } from '@/utils/icons';
+import { skillIcons } from '@/utils/icons';
 import s from './styles.module.scss';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 import { AiFillGithub, AiFillEye } from 'react-icons/ai';
 
 type ProjectCardProps = {
   title: string;
-  image: StaticImageData;
+  image: string;
   description: string;
   technologies: string[];
   projectLink: string;
-  sourceCode: string;
+  sourceCodeLink: string;
 };
 
 export default function ProjectCard({
@@ -19,7 +19,7 @@ export default function ProjectCard({
   description,
   technologies,
   projectLink,
-  sourceCode,
+  sourceCodeLink,
 }: ProjectCardProps) {
   return (
     <>
@@ -32,7 +32,10 @@ export default function ProjectCard({
           <Image
             src={image}
             alt={`Imagem do projeto ${title}`}
-            priority={true}
+            width={500}
+            height={281}
+            quality={100}
+            priority
           />
         </div>
 
@@ -41,7 +44,7 @@ export default function ProjectCard({
           <div>
             {technologies.map((technology) => (
               <span key={technology} data-technology={technology}>
-                {icons(technology)}
+                {skillIcons(technology)}
               </span>
             ))}
           </div>
@@ -58,7 +61,7 @@ export default function ProjectCard({
           <a href={projectLink} target="_blank" rel="noreferrer">
             <AiFillEye /> Visitar Projeto
           </a>
-          <a href={sourceCode} target="_blank" rel="noreferrer">
+          <a href={sourceCodeLink} target="_blank" rel="noreferrer">
             <AiFillGithub /> Código-Fonte
           </a>
         </div>

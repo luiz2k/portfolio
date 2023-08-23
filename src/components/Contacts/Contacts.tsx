@@ -1,82 +1,57 @@
-'use client';
-
 import s from './styles.module.scss';
 
-import { AiFillPhone, AiOutlineGithub, AiFillLinkedin } from 'react-icons/ai';
-import { MdEmail } from 'react-icons/md';
-import { BiLink } from 'react-icons/bi';
 import Waves from '../Waves/Waves';
 
 import { Kalam } from 'next/font/google';
+import { contactIcons } from '@/utils/icons';
 const kalam = Kalam({ subsets: ['latin'], weight: '700' });
 
-export default function Contacts() {
+type ContactsProps = {
+  contacts: {
+    map(
+      arg0: (contact: ContactTypes) => import('react').JSX.Element,
+    ): import('react').ReactNode;
+    link: boolean;
+    category: string;
+    categoryInfo: string;
+  };
+};
+
+type ContactTypes = {
+  link: boolean;
+  category: string;
+  categoryInfo: string;
+};
+
+export default function Contacts({ contacts }: ContactsProps) {
   return (
     <section id="contacts">
       <div>
         <h2 className={kalam.className}>Contatos</h2>
+
         <div className={s.contacts}>
-          <div className={s.contacts__contact}>
-            <div>
-              <MdEmail />
-            </div>
+          {contacts.map((contact: ContactTypes) => (
+            <div className={s.contacts__contact} key={contact.category}>
+              <div>{contactIcons(contact.category)}</div>
 
-            <div>
-              <p>E-Mail</p>
-              <p>luizteles934@gmail.com</p>
-            </div>
-          </div>
-
-          <div className={s.contacts__contact}>
-            <div>
-              <AiFillPhone />
-            </div>
-
-            <div>
-              <p>Telefone</p>
-              <p>(11) 96434-9354</p>
-            </div>
-          </div>
-
-          <div className={s.contacts__contact}>
-            <div>
-              <AiFillLinkedin />
-            </div>
-
-            <div>
-              <p>Linkedin</p>
-              <div className={s.contacts__contact__link}>
-                <a
-                  href="https://linkedin.com/in/luiz2k"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  @luiz2k
-                  <BiLink />
-                </a>
+              <div>
+                <p>{contact.category}</p>
+                {contact.link ? (
+                  <div className={s.contacts__contact__link}>
+                    <a
+                      href={contact.categoryInfo}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      @luiz2k {contactIcons('Link')}
+                    </a>
+                  </div>
+                ) : (
+                  <p>{contact.categoryInfo}</p>
+                )}
               </div>
             </div>
-          </div>
-
-          <div className={s.contacts__contact}>
-            <div>
-              <AiOutlineGithub />
-            </div>
-
-            <div>
-              <p>GitHub</p>
-              <div className={s.contacts__contact__link}>
-                <a
-                  href="https://github.com/luiz2k"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  @luiz2k
-                  <BiLink />
-                </a>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       <Waves />

@@ -7,11 +7,15 @@ import {
   BiLogoSass,
   BiLogoBootstrap,
   BiLogoTailwindCss,
+  BiLink,
 } from 'react-icons/bi';
+
+import { AiFillPhone, AiOutlineGithub, AiFillLinkedin } from 'react-icons/ai';
+import { MdEmail } from 'react-icons/md';
 
 import { SiStyledcomponents, SiNextdotjs } from 'react-icons/si';
 
-export function icons(icon: string) {
+export function skillIcons(icon: string) {
   switch (icon) {
     case 'HTML':
       return <BiLogoHtml5 fill="#f06529" />;
@@ -33,5 +37,28 @@ export function icons(icon: string) {
       return <SiStyledcomponents fill="#a96f52" />;
     case 'Tailwind CSS':
       return <BiLogoTailwindCss color="#38bdf8" />;
+    case 'E-Mail':
+      return <MdEmail />;
+    case 'Telefone':
+      return <AiFillPhone />;
+    case 'LinkedIn':
+      return <AiFillLinkedin />;
+    case 'GitHub':
+      return <AiOutlineGithub />;
+  }
+}
+
+export function contactIcons(icon: string) {
+  switch (icon) {
+    case 'E-Mail':
+      return <MdEmail />;
+    case 'Telefone':
+      return <AiFillPhone />;
+    case 'LinkedIn':
+      return <AiFillLinkedin />;
+    case 'GitHub':
+      return <AiOutlineGithub />;
+    case 'Link':
+      return <BiLink />;
   }
 }
