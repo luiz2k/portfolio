@@ -54,7 +54,7 @@
   }
 }
 
-@include breakpoint(sm) {
+@include customBreakpoint(550px) {
   .header {
     .header__nav {
       ul {
