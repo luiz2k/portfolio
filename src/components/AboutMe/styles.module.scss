@@ -56,6 +56,9 @@
     flex-direction: column;
     justify-content: center;
 
+    max-width: 50rem;
+    margin: auto;
+
     h3 {
       color: $color1;
       font-size: 3rem;
@@ -123,9 +126,6 @@
     }
 
     .aboutMe__Text {
-      max-width: 50rem;
-      margin: auto;
-
       h3 {
         margin-inline: unset;
         text-align: unset;
