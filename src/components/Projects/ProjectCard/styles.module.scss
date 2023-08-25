@@ -126,7 +126,7 @@
   }
 }
 
-@include breakpoint(sm) {
+@include customBreakpoint(375px) {
   .projectCard {
     .projectCard__buttons {
       a {
