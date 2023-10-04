@@ -7,20 +7,13 @@ import { contactIcons } from '@/utils/icons';
 const kalam = Kalam({ subsets: ['latin'], weight: '700' });
 
 type ContactsProps = {
-  contacts: {
-    map(
-      arg0: (contact: ContactTypes) => import('react').JSX.Element,
-    ): import('react').ReactNode;
-    link: boolean;
-    category: string;
-    categoryInfo: string;
-  };
-};
-
-type ContactTypes = {
-  link: boolean;
-  category: string;
-  categoryInfo: string;
+  contacts: [
+    {
+      link: boolean;
+      category: string;
+      categoryInfo: string;
+    },
+  ];
 };
 
 export default function Contacts({ contacts }: ContactsProps) {
@@ -30,7 +23,7 @@ export default function Contacts({ contacts }: ContactsProps) {
         <h2 className={kalam.className}>Contatos</h2>
 
         <div className={s.contacts}>
-          {contacts.map((contact: ContactTypes) => (
+          {contacts.map((contact) => (
             <div className={s.contacts__contact} key={contact.category}>
               <div>{contactIcons(contact.category)}</div>
 

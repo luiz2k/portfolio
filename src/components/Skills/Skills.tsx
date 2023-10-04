@@ -12,12 +12,7 @@ import { Kalam } from 'next/font/google';
 const kalam = Kalam({ subsets: ['latin'], weight: '700' });
 
 type SkillsProps = {
-  skills: {
-    map(
-      arg0: (skill: string) => import('react').JSX.Element,
-    ): import('react').ReactNode;
-    skill: string;
-  };
+  skills: string[];
 };
 
 export default function Skills({ skills }: SkillsProps) {
