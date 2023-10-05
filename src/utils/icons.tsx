@@ -8,12 +8,14 @@ import {
   BiLogoBootstrap,
   BiLogoTailwindCss,
   BiLink,
+  BiLogoNodejs,
+  BiLogoMongodb,
 } from 'react-icons/bi';
 
 import { AiFillPhone, AiOutlineGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 
-import { SiStyledcomponents, SiNextdotjs } from 'react-icons/si';
+import { SiStyledcomponents, SiNextdotjs, SiExpress } from 'react-icons/si';
 
 export function skillIcons(icon: string) {
   switch (icon) {
@@ -37,14 +39,12 @@ export function skillIcons(icon: string) {
       return <SiStyledcomponents fill="#a96f52" />;
     case 'Tailwind CSS':
       return <BiLogoTailwindCss color="#38bdf8" />;
-    case 'E-Mail':
-      return <MdEmail />;
-    case 'Telefone':
-      return <AiFillPhone />;
-    case 'LinkedIn':
-      return <AiFillLinkedin />;
-    case 'GitHub':
-      return <AiOutlineGithub />;
+    case 'Node.JS':
+      return <BiLogoNodejs fill="#5a964f" />;
+    case 'Express.JS':
+      return <SiExpress fill="#3a3a3a" />;
+    case 'MongoDB':
+      return <BiLogoMongodb fill="#4aaf3d" />;
   }
 }
 
