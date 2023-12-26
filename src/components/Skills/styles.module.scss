@@ -1,5 +1,17 @@
 @import '../../sass/variables.scss';
 
+.skill__title {
+  text-align: center;
+  width: auto !important;
+  font-size: 3rem;
+  padding: 2rem;
+  color: $color1;
+
+  &[data-back] {
+    margin-top: 5rem;
+  }
+}
+
 .skills {
   display: flex;
   flex-wrap: wrap;
