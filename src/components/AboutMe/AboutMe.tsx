@@ -16,6 +16,22 @@ type aboutMeProps = {
   };
 };
 
+function getAge(date: string): number {
+  const dateOfBirth: Date = new Date(date);
+  const currentDate: Date = new Date();
+
+  const differenceInYears: number =
+    currentDate.getTime() - dateOfBirth.getTime();
+
+  const TOTAL_MILLISECONDS_IN_A_YEAR: number = 1000 * 60 * 60 * 24 * 365.25;
+
+  const myAge: number = Math.floor(
+    differenceInYears / TOTAL_MILLISECONDS_IN_A_YEAR,
+  );
+
+  return myAge;
+}
+
 export default function AboutMe({ aboutMe }: aboutMeProps) {
   return (
     <section id="aboutMe">
@@ -39,7 +55,7 @@ export default function AboutMe({ aboutMe }: aboutMeProps) {
                 <span>Nome:</span> {aboutMe.name}
               </p>
               <p>
-                <span>Idade:</span> {aboutMe.age}
+                <span>Idade:</span> {getAge('2000-03-17')}
               </p>
               <p>
                 <span>Localização:</span> {aboutMe.location}
