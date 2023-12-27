@@ -18,7 +18,7 @@ function handleAnchorClick(event: MouseEvent) {
   const targetAttribute = target.getAttribute('href') as string;
   const section = document.querySelector(targetAttribute) as HTMLElement;
 
-  if (window.matchMedia('(min-width:640px)').matches) {
+  if (window.matchMedia('(min-width:768px)').matches) {
     return window.scroll({
       top: section.offsetTop - 60,
       behavior: 'smooth',
