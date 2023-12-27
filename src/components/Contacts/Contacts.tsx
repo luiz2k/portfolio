@@ -19,14 +19,12 @@ type ContactsProps = {
 export default function Contacts({ contacts }: ContactsProps) {
   return (
     <section id="contacts">
-      <div>
+      <article>
         <h2 className={kalam.className}>Contatos</h2>
-
         <div className={s.contacts}>
           {contacts.map((contact) => (
             <div className={s.contacts__contact} key={contact.category}>
               <div>{contactIcons(contact.category)}</div>
-
               <div>
                 <p>{contact.category}</p>
                 {contact.link ? (
@@ -46,7 +44,8 @@ export default function Contacts({ contacts }: ContactsProps) {
             </div>
           ))}
         </div>
-      </div>
+      </article>
+
       <Waves />
     </section>
   );

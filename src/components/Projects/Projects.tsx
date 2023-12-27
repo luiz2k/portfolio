@@ -20,7 +20,7 @@ type ProjectsProps = {
 export default function Projects({ projects }: ProjectsProps) {
   return (
     <section id="projects">
-      <div>
+      <article>
         <h2 className={kalam.className}>Projetos</h2>
         <div className={s.projects}>
           {projects.map((project) => (
@@ -35,7 +35,7 @@ export default function Projects({ projects }: ProjectsProps) {
             />
           ))}
         </div>
-      </div>
+      </article>
     </section>
   );
 }

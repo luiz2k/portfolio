@@ -34,15 +34,15 @@ export default function Skills({ skills }: SkillsProps) {
 
   return (
     <section id="skills">
-      <div>
+      <article>
         <h2 className={kalam.className}>Habilidades</h2>
 
-        <div>
+        <article>
           <h3 className={`${s.skill__title} ${courgette.className}`}>
             Front-end
           </h3>
 
-          <article className={s.skills}>
+          <div className={s.skills}>
             {skills.frontEnd.map((skill: string) => (
               <Tilt
                 key={skill}
@@ -56,15 +56,15 @@ export default function Skills({ skills }: SkillsProps) {
                 <p>{skill}</p>
               </Tilt>
             ))}
-          </article>
-        </div>
+          </div>
+        </article>
 
-        <div>
+        <article>
           <h3 className={`${s.skill__title} ${courgette.className}`} data-back>
             Back-end
           </h3>
 
-          <article className={s.skills}>
+          <div className={s.skills}>
             {skills.backEnd.map((skill: string) => (
               <Tilt
                 key={skill}
@@ -78,9 +78,9 @@ export default function Skills({ skills }: SkillsProps) {
                 <p>{skill}</p>
               </Tilt>
             ))}
-          </article>
-        </div>
-      </div>
+          </div>
+        </article>
+      </article>
     </section>
   );
 }

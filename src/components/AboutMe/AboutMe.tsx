@@ -35,7 +35,7 @@ function getAge(date: string): number {
 export default function AboutMe({ aboutMe }: aboutMeProps) {
   return (
     <section id="aboutMe">
-      <div>
+      <article>
         <h2 className={kalam.className}>Sobre-Mim</h2>
         <div className={s.aboutMe}>
           <div className={s.aboutMe__myPicture}>
@@ -66,7 +66,7 @@ export default function AboutMe({ aboutMe }: aboutMeProps) {
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </section>
   );
 }

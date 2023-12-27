@@ -5,12 +5,12 @@
   padding-top: 0;
   padding-bottom: 6rem;
 
-  section {
+  & > section {
     & > svg {
       display: none;
     }
 
-    & > div {
+    & > article {
       max-width: 120rem;
       min-height: calc(100vh - 6rem);
       padding: 1rem;
