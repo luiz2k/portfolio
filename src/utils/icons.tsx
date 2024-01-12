@@ -15,7 +15,13 @@ import {
 import { AiFillPhone, AiOutlineGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 
-import { SiStyledcomponents, SiNextdotjs, SiExpress } from 'react-icons/si';
+import {
+  SiStyledcomponents,
+  SiNextdotjs,
+  SiExpress,
+  SiMysql,
+  SiPrisma,
+} from 'react-icons/si';
 
 export function skillIcons(icon: string) {
   switch (icon) {
@@ -45,6 +51,10 @@ export function skillIcons(icon: string) {
       return <SiExpress fill="#3a3a3a" />;
     case 'MongoDB':
       return <BiLogoMongodb fill="#4aaf3d" />;
+    case 'MySQL':
+      return <SiMysql fill="#000000" />;
+    case 'Prisma':
+      return <SiPrisma fill="#000000" />;
   }
 }
 
