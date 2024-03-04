@@ -60,9 +60,6 @@ export default function AboutMe({ aboutMe }: aboutMeProps) {
               <p>
                 <span>Localização:</span> {aboutMe.location}
               </p>
-              <p>
-                <span>Telefone:</span> {aboutMe.phone}
-              </p>
             </div>
           </div>
         </div>
