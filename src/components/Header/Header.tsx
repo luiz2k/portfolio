@@ -38,7 +38,7 @@ export default function Header() {
         <ul>
           <li>
             <Link href={'#aboutMe'} onClick={handleAnchorClick}>
-              <BsPerson /> Sobre-Mim
+              <BsPerson /> Sobre Mim
             </Link>
           </li>
 

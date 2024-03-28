@@ -8,7 +8,7 @@
 
 ## 📚 Seções
 Seções do portfólio
-- **Sobre-Mim** Uma breve explicação sobre-mim
+- **Sobre Mim** Uma breve explicação sobre mim
 - **Habilidades:** Conhecimentos que eu tenho com tecnologias front-end
 - **Projetos:** Projetos pessoais que eu já desenvolvi
 - **Contatos:** Como entrar em contato comigo

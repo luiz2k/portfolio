@@ -36,7 +36,7 @@ export default function AboutMe({ aboutMe }: aboutMeProps) {
   return (
     <section id="aboutMe">
       <article>
-        <h2 className={kalam.className}>Sobre-Mim</h2>
+        <h2 className={kalam.className}>Sobre Mim</h2>
         <div className={s.aboutMe}>
           <div className={s.aboutMe__myPicture}>
             <div className="imageBG"></div>
