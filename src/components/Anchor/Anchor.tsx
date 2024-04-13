@@ -21,13 +21,15 @@ export default function Anchor({
     <Link
       href={href}
       data-path={pathName ? pathName === href : null}
-      className="flex items-center justify-between rounded p-1.5 duration-150 hover:bg-color-3/5 data-[path=true]:cursor-default data-[path=true]:bg-color-3/10"
+      className="flex items-center justify-between rounded p-1.5 duration-150 ease-in-out hover:bg-color-3/5 data-[path=true]:cursor-default data-[path=true]:bg-color-3/10"
       {...props}
     >
       <span className="flex items-center gap-1">
-        {leftIcon} {children}
+        {leftIcon && leftIcon}
+        {children}
       </span>
-      <span>{rightIcon}</span>
+
+      {rightIcon && <span>{rightIcon}</span>}
     </Link>
   );
 }
