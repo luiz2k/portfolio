@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={poppins.className}>
         <ThemeProvider>
-          <div className="bg-color-1 bg-[url('/noise.webp')] text-black dark:bg-color-5 dark:text-white">
+          <div className="min-h-[calc(100vh-4.688rem)] bg-color-1 bg-[url('/noise.webp')] text-black dark:bg-color-5 dark:text-white md:min-h-screen">
             <Header />
             <main className="mt-[4.688rem] px-5 py-16 md:ml-60 md:mt-0">
               <div className="m-auto max-w-4xl">{children}</div>
