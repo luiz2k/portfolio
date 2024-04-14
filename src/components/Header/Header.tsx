@@ -48,7 +48,7 @@ export default function Header() {
   }, [openNav]);
 
   return (
-    <header className="fixed inset-x-0 top-0 flex items-center justify-end gap-5 border-b border-neutral-500 bg-color-1 p-5 text-lg dark:bg-color-5 md:block md:h-screen md:w-60 md:border-b-0 md:border-r">
+    <header className="fixed inset-x-0 top-0 z-10 flex items-center justify-end gap-5 border-b border-color-3/10 bg-color-1 p-5 text-lg dark:bg-color-5 md:block md:h-screen md:w-60 md:border-b-0 md:border-r">
       <ul className="flex gap-1 md:absolute md:bottom-5 md:right-5">
         <li>
           <ThemeMenu />
@@ -57,7 +57,7 @@ export default function Header() {
         <li className="md:hidden">
           <button
             onClick={() => setOpenNav((prev) => !prev)}
-            className="block rounded border border-neutral-500 p-1.5 duration-150 ease-in-out hover:bg-color-3/5"
+            className="block rounded border border-color-3/10 p-1.5 duration-150 ease-in-out hover:bg-color-3/5"
           >
             <LuMenu size={20} />
           </button>
@@ -66,7 +66,7 @@ export default function Header() {
 
       <div
         data-nav={openNav}
-        className="fixed inset-x-0 top-[4.688rem] h-0 overflow-hidden border-neutral-500 bg-color-1 duration-150 ease-in-out data-[nav=true]:h-[22.25rem] data-[nav=true]:border-b dark:bg-color-5 md:static md:h-fit md:data-[nav=true]:border-b-0"
+        className="fixed inset-x-0 top-[4.688rem] h-0 overflow-hidden border-color-3/10 bg-color-1 duration-150 ease-in-out data-[nav=true]:h-[22.25rem] data-[nav=true]:border-b dark:bg-color-5 md:static md:h-fit md:data-[nav=true]:border-b-0"
       >
         <div className="flex flex-col gap-5 p-5 md:p-0">
           <div>
