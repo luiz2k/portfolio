@@ -41,14 +41,14 @@ export default function ThemeMenu() {
     <div className="relative z-10">
       <button
         onClick={() => setOpenMenu((prev) => !prev)}
-        className="block rounded border border-neutral-500 p-1.5 duration-150 ease-in-out hover:bg-color-3/5"
+        className="block rounded border border-color-3/10 p-1.5 duration-150 ease-in-out hover:bg-color-3/5"
       >
         <LuSunMoon size={20} />
       </button>
 
       <menu
         data-open={openMenu}
-        className="invisible absolute right-1/2 top-0 mt-10 translate-x-1/2 translate-y-2 rounded border border-neutral-500 bg-color-1 p-1.5 opacity-0 duration-150 ease-in-out data-[open=true]:visible data-[open=true]:translate-y-0 data-[open=true]:opacity-100 dark:bg-color-5 md:bottom-0 md:top-auto md:mb-10 md:-translate-y-2"
+        className="invisible absolute right-1/2 top-0 mt-10 translate-x-1/2 translate-y-2 rounded border border-color-3/10 bg-color-1 p-1.5 opacity-0 duration-150 ease-in-out data-[open=true]:visible data-[open=true]:translate-y-0 data-[open=true]:opacity-100 dark:bg-color-5 md:bottom-0 md:top-auto md:mb-10 md:-translate-y-2"
       >
         <h2 className="text-sm text-color-3">
           <LuCircle className="inline" size={7} /> Temas
