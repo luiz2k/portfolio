@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import ThemeMenu from "../ThemeMenu/ThemeMenu";
+import Anchor from "../Anchor/Anchor";
+
+import useHeader from "./useHeader";
 
 import {
   LuBookOpenCheck,
@@ -14,38 +16,9 @@ import {
   LuSmartphone,
   LuUser,
 } from "react-icons/lu";
-import { usePathname } from "next/navigation";
-import Anchor from "../Anchor/Anchor";
 
 export default function Header() {
-  const pathName: string = usePathname();
-
-  const [openNav, setOpenNav] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (!openNav) return;
-
-    const documentEvent = (event: MouseEvent): void => {
-      const target = event.target as HTMLElement | null;
-      const nav = target?.closest("[data-nav]") as HTMLDivElement | null;
-
-      const CLICK_ON_THE_NAV_OPTION: boolean | null = !(
-        nav &&
-        target?.tagName !== "A" &&
-        !!!target?.closest("svg") &&
-        !!!target?.closest("span")
-      );
-
-      // Fechar a barra de navegação apenas quando clicar em uma de suas opções, ou fora da barra de navegação.
-      if (CLICK_ON_THE_NAV_OPTION) {
-        setOpenNav((prev) => !prev);
-      }
-    };
-
-    window.document.addEventListener("click", documentEvent);
-
-    return () => window.document.removeEventListener("click", documentEvent);
-  }, [openNav]);
+  const { pathName, openNav, setOpenNav } = useHeader();
 
   return (
     <header className="fixed inset-x-0 top-0 z-10 flex items-center justify-end gap-5 border-b border-color-3/10 bg-color-1 p-5 text-lg dark:bg-color-5 md:block md:h-screen md:w-60 md:border-b-0 md:border-r">
