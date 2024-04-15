@@ -1,11 +1,6 @@
 import { skillIcons } from "@/utils/icons";
 
-interface BadgeProps {
-  title?: string;
-  icon?: string;
-  description?: string;
-  children?: string;
-}
+import { BadgeProps } from "./Badge.d";
 
 export default function Badge({ title, icon, children }: BadgeProps) {
   return (
