@@ -69,7 +69,7 @@ export default function ProjectCard({
         </header>
 
         <div className="flex h-full flex-col justify-between space-y-5 p-5">
-          <div>
+          <div className="space-y-5">
             <article className="scroll space-y-2">
               <h3 className="flex items-center justify-center gap-1 text-center text-xl">
                 <IoMdBook /> Descrição
