@@ -75,7 +75,7 @@ export function skillIcons(icon: string): JSX.Element | null {
     case "Fastify":
       return <SiFastify fill="#000000" />;
     case "Nest.JS":
-      return <SiNestjs fill="#000000" />;
+      return <SiNestjs fill="#ea285f" />;
     case "Prettier":
       return <SiPrettier fill="#ea5e5e" />;
     case "ESLint":
