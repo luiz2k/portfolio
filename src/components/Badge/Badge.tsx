@@ -1,4 +1,4 @@
-import { skillIcons } from "@/utils/icons";
+import { skillIcons } from "@/utils/icons/icons";
 
 import { BadgeProps } from "./Badge.d";
 
