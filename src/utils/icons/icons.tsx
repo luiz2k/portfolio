@@ -23,11 +23,16 @@ import {
   SiNestjs,
   SiPrettier,
   SiEslint,
+  SiCssmodules,
+  SiCypress,
+  SiSanity,
 } from "react-icons/si";
 
 import { AiFillPhone, AiOutlineGithub, AiFillLinkedin } from "react-icons/ai";
 
 import { MdEmail } from "react-icons/md";
+
+import { TypeORM } from "@/utils/icons/typeORM";
 
 export function skillIcons(icon: string): JSX.Element | null {
   switch (icon) {
@@ -43,6 +48,8 @@ export function skillIcons(icon: string): JSX.Element | null {
       return <BiLogoReact fill="#61DBFB" />;
     case "Next.JS":
       return <SiNextdotjs fill="#000000" />;
+    case "CSS Modules":
+      return <SiCssmodules fill="#D7D8D9" />;
     case "Sass":
       return <BiLogoSass fill="#cc6699" />;
     case "Bootstrap":
@@ -61,6 +68,8 @@ export function skillIcons(icon: string): JSX.Element | null {
       return <SiMysql fill="#000000" />;
     case "Prisma":
       return <SiPrisma fill="#0a3c54" />;
+    case "TypeORM":
+      return <TypeORM fill="#fe0902" />;
     case "PostgreSQL":
       return <BiLogoPostgresql fill="#31648c" />;
     case "Fastify":
@@ -71,6 +80,10 @@ export function skillIcons(icon: string): JSX.Element | null {
       return <SiPrettier fill="#ea5e5e" />;
     case "ESLint":
       return <SiEslint fill="#4930bd" />;
+    case "Cypress":
+      return <SiCypress fill="#98E1C3" />;
+    case "Sanity":
+      return <SiSanity fill="#f36458" />;
     default:
       return null;
   }
