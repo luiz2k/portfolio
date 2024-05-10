@@ -1,4 +1,4 @@
-import { contactIcons } from "@/utils/icons";
+import { contactIcons } from "@/utils/icons/icons";
 
 import { LuCopy, LuExternalLink } from "react-icons/lu";
 
