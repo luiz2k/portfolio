@@ -4,13 +4,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "avatars.githubusercontent.com",
-        pathname: "/u/**",
-      },
-      {
-        protocol: "https",
-        hostname: "i.imgur.com",
-        pathname: "/**.png",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/bjx1xzx4/portfolio-dataset/**",
       },
     ],
   },
