@@ -4,17 +4,20 @@ import Link from "next/link";
 import Badge from "@/components/Badge/Badge";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 
-import getPortfolioData from "@/services/portfolioData";
+import { getMainSkills, getMe, getProjects } from "@/api/sanityServices";
+import { PortableText } from "@portabletext/react";
 
 export default async function Home() {
-  const data = await getPortfolioData();
+  const me = await getMe();
+  const skills = await getMainSkills();
+  const projects = await getProjects("main");
 
   return (
     <section className="space-y-24">
       <article className="flex flex-wrap items-center justify-center gap-5">
         <div>
           <p className=" text-lg sm:text-2xl">
-            Olá, eu me chamo <strong>{data.about_me.name}</strong>
+            Olá, eu me chamo <strong>{me.name}</strong>
           </p>
 
           <h1 className="flex flex-col text-3xl font-bold text-color-3 sm:text-5xl md:text-6xl lg:text-7xl">
@@ -25,7 +28,7 @@ export default async function Home() {
 
         <div className="bubble-animation w-fit overflow-hidden rounded-full bg-color-3/15">
           <Image
-            src={data?.about_me?.photograph}
+            src={me.imageUrl}
             alt="Foto de perfil"
             width={300}
             height={300}
@@ -39,7 +42,9 @@ export default async function Home() {
           Sobre Mim <hr className="w-full" />
         </h2>
 
-        <p className="ml-0 md:ml-5">{data?.about_me?.description}</p>
+        <div className="ml-0 md:ml-5 ">
+          <PortableText value={me.about_me} />
+        </div>
       </article>
 
       <article className="space-y-5">
@@ -48,9 +53,9 @@ export default async function Home() {
         </h2>
 
         <div className="ml-0 flex flex-wrap gap-2 md:ml-5">
-          {data.skills.main.map((skill) => (
-            <Badge key={skill} title={skill} icon={skill}>
-              {skill}
+          {skills.main.map((skill) => (
+            <Badge key={skill._id} title={skill.name} imageUrl={skill.imageUrl}>
+              {skill.name}
             </Badge>
           ))}
         </div>
@@ -70,16 +75,15 @@ export default async function Home() {
           Projetos <hr className="w-full" />
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-5">
-          {data.projects.main.map((project) => (
+        <div className="ml-0 flex flex-wrap  justify-center gap-5 md:ml-5">
+          {projects.map((project) => (
             <ProjectCard
               key={project.title}
               title={project.title}
-              image={project.image}
+              imageUrl={project.imageUrl}
               description={project.description}
               technologies={project.technologies}
-              source_code={project.source_code}
-              project_link={project.project_link}
+              links={project.links}
             />
           ))}
         </div>
