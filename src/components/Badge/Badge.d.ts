@@ -1,6 +1,6 @@
 export interface BadgeProps {
-  title?: string;
-  icon?: string;
+  title: string;
+  imageUrl: string;
   description?: string;
   children?: string;
 }
