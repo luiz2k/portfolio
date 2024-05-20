@@ -12,8 +12,8 @@
 - **Projetos:** Projetos pessoais que eu já desenvolvi
 - **Contatos:** Como entrar em contato comigo
 
-
 ### 🛠️ Tecnologias
-- Next.JS
-- TypeScript
-- Tailwind
+- Next.JS: Framework web que possibilita renderização do lado do servidor e geração de sites estáticos.
+- TypeScript: Linguagem de programação tipada que é um superconjunto de JavaScript.
+- Tailwind: Framework CSS baseado em classes utilitárias.
+- Sanity: Sistema para gerenciamento de conteúdo.
