@@ -4,28 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import { FaEye } from "react-icons/fa6";
+import { IoLogoGithub, IoMdBook } from "react-icons/io";
+import { LuBrain } from "react-icons/lu";
+
 import Badge from "../Badge/Badge";
 
-import { IoLogoGithub, IoMdBook } from "react-icons/io";
-import { LuBrain, LuPaintbrush2 } from "react-icons/lu";
-import { FaCode, FaEye } from "react-icons/fa6";
-import { CiGlobe } from "react-icons/ci";
+import { PortableText } from "@portabletext/react";
 
-import { ProjectCardProps } from "./ProjectCard.d";
+import type { ProjectCardProps } from "./ProjectCard.d";
 
 export default function ProjectCard({
   title,
-  image,
+  imageUrl,
   description,
+  links,
   technologies,
-  source_code,
-  project_link,
 }: ProjectCardProps) {
-  const [imageModal, setImageModal] = useState<string>("/grid-light.png");
   const [modal, setModal] = useState<boolean>(false);
 
-  async function openModal(image: string) {
-    setImageModal(image);
+  async function openModal() {
     setModal(true);
   }
 
@@ -41,7 +39,7 @@ export default function ProjectCard({
         className="invisible fixed left-0 top-0 z-10 flex size-full items-center justify-center overflow-hidden bg-white/5 p-5 opacity-0 backdrop-blur-sm duration-150 ease-in-out data-[image='true']:visible data-[image='true']:opacity-100"
       >
         <Image
-          src={imageModal}
+          src={imageUrl}
           alt={title}
           width={1280}
           height={720}
@@ -50,32 +48,34 @@ export default function ProjectCard({
         />
       </article>
 
-      <article className="flex max-w-[27.3rem] flex-col rounded bg-color-3/15">
-        <header>
-          <h2 className="py-5 text-center text-2xl font-medium uppercase">
+      <div className="rounded bg-color-3/15">
+        <header className="p-5">
+          <h2 className="text-center text-2xl font-medium uppercase">
             {title}
           </h2>
+        </header>
 
+        <article className="grid grid-cols-1 gap-5 rounded lg:grid-cols-2 lg:px-5">
           <div className="overflow-hidden">
             <Image
-              src={image}
+              src={imageUrl}
               alt={title}
               width={1280}
               height={720}
-              onClick={() => openModal(image)}
+              onClick={() => openModal()}
               className="cursor-pointer duration-150 ease-in-out hover:scale-105"
             />
           </div>
-        </header>
 
-        <div className="flex h-full flex-col justify-between space-y-5 p-5">
-          <div className="space-y-5">
+          <div className="flex h-full flex-col justify-between space-y-5 px-5 lg:px-0">
             <article className="scroll space-y-2">
               <h3 className="flex items-center justify-center gap-1 text-center text-xl">
                 <IoMdBook /> Descrição
               </h3>
 
-              <p className="h-[7.5rem] overflow-y-scroll pr-2">{description}</p>
+              <div className="h-[7.5rem] overflow-y-scroll pr-2">
+                <PortableText value={description} />
+              </div>
             </article>
 
             <article className="space-y-2">
@@ -83,79 +83,89 @@ export default function ProjectCard({
                 <LuBrain /> Tecnologias
               </h3>
 
-              {technologies.front_end && (
-                <div className="space-y-2">
-                  <h4 className="text-lg">Front-End</h4>
+              <div className="flex gap-5">
+                {technologies.front_end && (
+                  <div className="space-y-2">
+                    <h4 className="text-lg">Front-End</h4>
 
-                  <div className="flex flex-wrap gap-2">
-                    {technologies.front_end.map((skill) => (
-                      <Badge key={skill} title={skill} icon={skill} />
-                    ))}
+                    <div className="flex flex-wrap gap-2">
+                      {technologies.front_end.map((skill) => (
+                        <Badge
+                          key={skill._id}
+                          title={skill.name}
+                          imageUrl={skill.imageUrl}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
-
-              {technologies.back_end && (
-                <div className="space-y-2">
-                  <h4 className="text-lg">Back-End</h4>
-
-                  <div className="flex flex-wrap gap-2">
-                    {technologies.back_end?.map((skill) => (
-                      <Badge key={skill} title={skill} icon={skill} />
-                    ))}
-                  </div>
-                </div>
-              )}
-            </article>
-          </div>
-
-          <div className="space-y-5">
-            <article className="space-y-2">
-              <h3 className="flex items-center justify-center gap-1 text-center text-xl">
-                <IoLogoGithub /> Código Fonte
-              </h3>
-
-              <div className="flex flex-wrap items-center justify-center gap-2">
-                {source_code?.front_end && (
-                  <Link
-                    href={source_code?.front_end}
-                    target="_blank"
-                    className="flex items-center justify-center gap-1 rounded bg-color-3 p-2 text-white duration-150 ease-in-out hover:bg-color-3/80"
-                  >
-                    <LuPaintbrush2 /> Front-End
-                  </Link>
                 )}
 
-                {source_code?.back_end && (
-                  <Link
-                    href={source_code?.back_end}
-                    target="_blank"
-                    className="flex items-center justify-center gap-1 rounded bg-color-3 p-2 text-white duration-150 ease-in-out hover:bg-color-3/80"
-                  >
-                    <FaCode /> Back-End
-                  </Link>
+                {technologies.back_end && (
+                  <div className="space-y-2">
+                    <h4 className="text-lg">Back-End</h4>
+
+                    <div className="flex flex-wrap gap-2">
+                      {technologies.back_end?.map((skill) => (
+                        <Badge
+                          key={skill._id}
+                          title={skill.name}
+                          imageUrl={skill.imageUrl}
+                        />
+                      ))}
+                    </div>
+                  </div>
                 )}
               </div>
             </article>
-
-            <article className="space-y-2">
-              <h3 className="flex items-center justify-center gap-1 text-center text-xl">
-                <CiGlobe /> Acessos
-              </h3>
-
-              <div>
-                <Link
-                  href={project_link}
-                  target="_blank"
-                  className="flex items-center justify-center gap-1 rounded bg-color-3 p-2 text-white duration-150 ease-in-out hover:bg-color-3/80"
-                >
-                  <FaEye /> Visitar Projeto
-                </Link>
-              </div>
-            </article>
           </div>
-        </div>
-      </article>
+        </article>
+
+        <footer className="mt-5 flex flex-wrap items-center justify-center gap-5 bg-color-3/15 p-5">
+          {links.source_code.front_end && (
+            <Link
+              title="Código fonte do front-end"
+              href={links.source_code.front_end}
+              target="_blank"
+              className="flex items-center justify-center gap-1 hover:underline"
+            >
+              <IoLogoGithub /> Front-End
+            </Link>
+          )}
+
+          {links.source_code.back_end && (
+            <Link
+              title="Código fonte do back-end"
+              href={links.source_code.back_end}
+              target="_blank"
+              className="flex items-center justify-center gap-1 hover:underline"
+            >
+              <IoLogoGithub /> Back-End
+            </Link>
+          )}
+
+          {links.visit.demo && (
+            <Link
+              title="Demo do projeto"
+              href={links.visit.demo}
+              target="_blank"
+              className="flex items-center justify-center gap-1 hover:underline"
+            >
+              <FaEye /> Visitar Projeto
+            </Link>
+          )}
+
+          {links.visit.documentation && (
+            <Link
+              title="Demo do projeto"
+              href={links.visit.documentation}
+              target="_blank"
+              className="flex items-center justify-center gap-1 hover:underline"
+            >
+              <FaEye /> Visitar Projeto
+            </Link>
+          )}
+        </footer>
+      </div>
     </>
   );
 }
