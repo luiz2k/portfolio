@@ -1,11 +1,11 @@
+import { getProjects } from "@/api/sanityServices";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
-
-import getPortfolioData from "@/services/portfolioData";
 
 import { PiStarFill } from "react-icons/pi";
 
 export default async function Projects() {
-  const data = await getPortfolioData();
+  const mainProjects = await getProjects("main");
+  const otherProjects = await getProjects("others");
 
   return (
     <section className="space-y-24">
@@ -21,16 +21,15 @@ export default async function Projects() {
           <hr className="w-full" />
         </h2>
 
-        <section className="flex flex-wrap justify-center gap-5">
-          {data.projects.main.map((project) => (
+        <section className="ml-0 flex flex-wrap justify-center gap-5 md:ml-5">
+          {mainProjects.map((project) => (
             <ProjectCard
               key={project.title}
               title={project.title}
-              image={project.image}
+              imageUrl={project.imageUrl}
               description={project.description}
               technologies={project.technologies}
-              source_code={project.source_code}
-              project_link={project.project_link}
+              links={project.links}
             />
           ))}
         </section>
@@ -41,16 +40,15 @@ export default async function Projects() {
           Outros <hr className="w-full" />
         </h2>
 
-        <section className="flex flex-wrap justify-center gap-5">
-          {data.projects.others.map((project) => (
+        <section className="ml-0 flex flex-wrap  justify-center gap-5 md:ml-5">
+          {otherProjects.map((project) => (
             <ProjectCard
               key={project.title}
               title={project.title}
-              image={project.image}
+              imageUrl={project.imageUrl}
               description={project.description}
               technologies={project.technologies}
-              source_code={project.source_code}
-              project_link={project.project_link}
+              links={project.links}
             />
           ))}
         </section>
