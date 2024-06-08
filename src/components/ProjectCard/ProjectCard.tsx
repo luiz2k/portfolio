@@ -5,8 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { FaEye } from "react-icons/fa6";
-import { IoLogoGithub, IoMdBook } from "react-icons/io";
-import { LuBrain } from "react-icons/lu";
+import { IoLogoGithub } from "react-icons/io";
 
 import Badge from "../Badge/Badge";
 
@@ -48,14 +47,14 @@ export default function ProjectCard({
         />
       </article>
 
-      <div className="rounded bg-color-3/15">
+      <article className="rounded bg-color-3/15">
         <header className="p-5">
-          <h2 className="text-center text-2xl font-medium uppercase">
+          <h3 className="text-center text-2xl font-medium uppercase">
             {title}
-          </h2>
+          </h3>
         </header>
 
-        <article className="grid grid-cols-1 gap-5 rounded lg:grid-cols-2 lg:px-5">
+        <div className="grid grid-cols-1 gap-5 rounded lg:grid-cols-2 lg:px-5">
           <div className="overflow-hidden">
             <Image
               src={imageUrl}
@@ -68,57 +67,47 @@ export default function ProjectCard({
           </div>
 
           <div className="flex h-full flex-col justify-between space-y-5 px-5 lg:px-0">
-            <article className="scroll space-y-2">
-              <h3 className="flex items-center justify-center gap-1 text-center text-xl">
-                <IoMdBook /> Descrição
-              </h3>
-
+            <div className="scroll">
               <div className="h-[7.5rem] overflow-y-scroll pr-2">
                 <PortableText value={description} />
               </div>
-            </article>
+            </div>
 
-            <article className="space-y-2">
-              <h3 className="flex items-center justify-center gap-1 text-center text-xl">
-                <LuBrain /> Tecnologias
-              </h3>
+            <div className="flex gap-5">
+              {technologies.front_end && (
+                <article className="space-y-2">
+                  <h4 className="text-lg">Front-End</h4>
 
-              <div className="flex gap-5">
-                {technologies.front_end && (
-                  <div className="space-y-2">
-                    <h4 className="text-lg">Front-End</h4>
-
-                    <div className="flex flex-wrap gap-2">
-                      {technologies.front_end.map((skill) => (
-                        <Badge
-                          key={skill._id}
-                          title={skill.name}
-                          imageUrl={skill.imageUrl}
-                        />
-                      ))}
-                    </div>
+                  <div className="flex flex-wrap gap-2">
+                    {technologies.front_end.map((skill) => (
+                      <Badge
+                        key={skill._id}
+                        title={skill.name}
+                        imageUrl={skill.imageUrl}
+                      />
+                    ))}
                   </div>
-                )}
+                </article>
+              )}
 
-                {technologies.back_end && (
-                  <div className="space-y-2">
-                    <h4 className="text-lg">Back-End</h4>
+              {technologies.back_end && (
+                <article className="space-y-2">
+                  <h4 className="text-lg">Back-End</h4>
 
-                    <div className="flex flex-wrap gap-2">
-                      {technologies.back_end?.map((skill) => (
-                        <Badge
-                          key={skill._id}
-                          title={skill.name}
-                          imageUrl={skill.imageUrl}
-                        />
-                      ))}
-                    </div>
+                  <div className="flex flex-wrap gap-2">
+                    {technologies.back_end?.map((skill) => (
+                      <Badge
+                        key={skill._id}
+                        title={skill.name}
+                        imageUrl={skill.imageUrl}
+                      />
+                    ))}
                   </div>
-                )}
-              </div>
-            </article>
+                </article>
+              )}
+            </div>
           </div>
-        </article>
+        </div>
 
         <footer className="mt-5 flex flex-wrap items-center justify-center gap-5 bg-color-3/15 p-5">
           {links.source_code.front_end && (
@@ -145,27 +134,27 @@ export default function ProjectCard({
 
           {links.visit.demo && (
             <Link
-              title="Demo do projeto"
+              title="Demonstração do projeto"
               href={links.visit.demo}
               target="_blank"
               className="flex items-center justify-center gap-1 hover:underline"
             >
-              <FaEye /> Visitar Projeto
+              <FaEye /> Demonstração
             </Link>
           )}
 
           {links.visit.documentation && (
             <Link
-              title="Demo do projeto"
+              title="Documentação do projeto"
               href={links.visit.documentation}
               target="_blank"
               className="flex items-center justify-center gap-1 hover:underline"
             >
-              <FaEye /> Visitar Projeto
+              <FaEye /> Documentação
             </Link>
           )}
         </footer>
-      </div>
+      </article>
     </>
   );
 }
