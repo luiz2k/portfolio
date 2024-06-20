@@ -23,18 +23,16 @@ export default async function Projects() {
         </h2>
 
         <section className="ml-0 flex flex-wrap justify-center gap-5 md:ml-5">
-          <ModalContextProvider>
-            {mainProjects.map((project) => (
-              <ProjectCard
-                key={project.title}
-                title={project.title}
-                imageUrl={project.imageUrl}
-                description={project.description}
-                technologies={project.technologies}
-                links={project.links}
-              />
-            ))}
-          </ModalContextProvider>
+          {mainProjects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              imageUrl={project.imageUrl}
+              description={project.description}
+              technologies={project.technologies}
+              links={project.links}
+            />
+          ))}
         </section>
       </section>
 
@@ -43,7 +41,7 @@ export default async function Projects() {
           Outros <hr className="w-full" />
         </h2>
 
-        <section className="ml-0 flex flex-wrap  justify-center gap-5 md:ml-5">
+        <section className="ml-0 flex flex-wrap justify-center gap-5 md:ml-5">
           {otherProjects.map((project) => (
             <ProjectCard
               key={project.title}

@@ -77,18 +77,16 @@ export default async function Home() {
         </h2>
 
         <div className="ml-0 flex flex-wrap  justify-center gap-5 md:ml-5">
-          <ModalContextProvider>
-            {projects.map((project) => (
-              <ProjectCard
-                key={project.title}
-                title={project.title}
-                imageUrl={project.imageUrl}
-                description={project.description}
-                technologies={project.technologies}
-                links={project.links}
-              />
-            ))}
-          </ModalContextProvider>
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              imageUrl={project.imageUrl}
+              description={project.description}
+              technologies={project.technologies}
+              links={project.links}
+            />
+          ))}
         </div>
 
         <div className="text-center">

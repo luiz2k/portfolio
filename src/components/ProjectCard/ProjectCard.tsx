@@ -21,7 +21,7 @@ export default function ProjectCard({
   links,
   technologies,
 }: ProjectCardProps) {
-  const { handleModal } = useContext(ModalContext);
+  const { setModal } = useContext(ModalContext);
 
   return (
     <>
@@ -40,7 +40,13 @@ export default function ProjectCard({
               width={1280}
               height={720}
               priority
-              onClick={() => handleModal(imageUrl, title)}
+              onClick={() =>
+                setModal({
+                  isOpen: true,
+                  src: imageUrl,
+                  alt: title,
+                })
+              }
               className="cursor-pointer duration-150 ease-in-out hover:scale-105"
             />
           </div>

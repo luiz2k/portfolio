@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export type Modal = {
   isOpen: boolean;
   src: string;
@@ -5,5 +7,6 @@ export type Modal = {
 };
 
 export type ModalContextType = {
-  handleModal(src: string, alt: string): void;
+  modal: Modal;
+  setModal: Dispatch<SetStateAction<Modal>>;
 };
