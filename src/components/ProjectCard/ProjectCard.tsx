@@ -39,6 +39,7 @@ export default function ProjectCard({
               alt={title}
               width={1280}
               height={720}
+              priority
               onClick={() => handleModal(imageUrl, title)}
               className="cursor-pointer duration-150 ease-in-out hover:scale-105"
             />
