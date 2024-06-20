@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" suppressHydrationWarning>
       <body className={poppins.className}>
         <ThemeProvider>
           <div className="min-h-[calc(100vh-4.688rem)] bg-color-1 bg-[url('/noise.webp')] text-black dark:bg-color-5 dark:text-white md:min-h-screen">
