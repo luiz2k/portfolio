@@ -73,7 +73,7 @@ export default function ProjectCard({
               </div>
             </div>
 
-            <div className="flex gap-5">
+            <div className="flex flex-wrap gap-5">
               {technologies.front_end && (
                 <article className="space-y-2">
                   <h4 className="text-lg">Front-End</h4>
