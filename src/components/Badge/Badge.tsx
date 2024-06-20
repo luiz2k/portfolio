@@ -12,7 +12,7 @@ export default function Badge({ title, imageUrl, children }: BadgeProps) {
       )}
 
       {!children && (
-        <span className="pointer-events-none invisible absolute -top-8 left-1/2 -translate-x-1/2 rounded bg-color-4 p-1 text-xs text-white opacity-0 duration-150 ease-in-out group-hover:visible group-hover:-top-6 group-hover:opacity-100 dark:bg-color-2 dark:text-black">
+        <span className="pointer-events-none invisible absolute -top-8 left-1/2 -translate-x-1/2 text-nowrap rounded bg-color-4 p-1 text-xs text-white opacity-0 duration-150 ease-in-out group-hover:visible group-hover:-top-6 group-hover:opacity-100 dark:bg-color-2 dark:text-black">
           {title}
           <span className="absolute -bottom-1 left-1/2 size-2 -translate-x-1/2 rotate-45 bg-color-4 dark:bg-color-2" />
         </span>
