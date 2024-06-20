@@ -1,5 +1,6 @@
 import { getProjects } from "@/api/sanityServices";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
+import { ModalContextProvider } from "@/contexts/ModalContextProvider";
 
 import { PiStarFill } from "react-icons/pi";
 
@@ -22,16 +23,18 @@ export default async function Projects() {
         </h2>
 
         <section className="ml-0 flex flex-wrap justify-center gap-5 md:ml-5">
-          {mainProjects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              title={project.title}
-              imageUrl={project.imageUrl}
-              description={project.description}
-              technologies={project.technologies}
-              links={project.links}
-            />
-          ))}
+          <ModalContextProvider>
+            {mainProjects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                imageUrl={project.imageUrl}
+                description={project.description}
+                technologies={project.technologies}
+                links={project.links}
+              />
+            ))}
+          </ModalContextProvider>
         </section>
       </section>
 

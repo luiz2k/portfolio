@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext } from "react";
 
 import { FaEye } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
@@ -11,6 +11,7 @@ import Badge from "../Badge/Badge";
 
 import { PortableText } from "@portabletext/react";
 
+import { ModalContext } from "@/contexts/ModalContextProvider";
 import type { ProjectCardProps } from "./ProjectCard.d";
 
 export default function ProjectCard({
@@ -20,33 +21,10 @@ export default function ProjectCard({
   links,
   technologies,
 }: ProjectCardProps) {
-  const [modal, setModal] = useState<boolean>(false);
-
-  async function openModal() {
-    setModal(true);
-  }
-
-  async function closeModal() {
-    setModal(false);
-  }
+  const { handleModal } = useContext(ModalContext);
 
   return (
     <>
-      <article
-        data-image={modal}
-        onClick={closeModal}
-        className="invisible fixed left-0 top-0 z-10 flex size-full items-center justify-center overflow-hidden bg-white/5 p-5 opacity-0 backdrop-blur-sm duration-150 ease-in-out data-[image='true']:visible data-[image='true']:opacity-100"
-      >
-        <Image
-          src={imageUrl}
-          alt={title}
-          width={1280}
-          height={720}
-          data-image={modal}
-          className="scale-95 cursor-pointer rounded duration-150 ease-in-out data-[image='true']:scale-100"
-        />
-      </article>
-
       <article className="rounded bg-color-3/15">
         <header className="p-5">
           <h3 className="text-center text-2xl font-medium uppercase">
@@ -61,7 +39,7 @@ export default function ProjectCard({
               alt={title}
               width={1280}
               height={720}
-              onClick={() => openModal()}
+              onClick={() => handleModal(imageUrl, title)}
               className="cursor-pointer duration-150 ease-in-out hover:scale-105"
             />
           </div>
