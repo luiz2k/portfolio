@@ -76,17 +76,22 @@ export const projects = defineType({
       fields: [
         {
           name: "source_code",
-          title: "Código Fonte",
+          title: "Código-fonte",
           type: "object",
           fields: [
             {
               name: "front_end",
-              title: "Código fonte do front-end",
+              title: "Código-fonte do front-end",
               type: "url",
             },
             {
               name: "back_end",
-              title: "Código fonte do back-end",
+              title: "Código-fonte do back-end",
+              type: "url",
+            },
+            {
+              name: "monorepo",
+              title: "Código-fonte",
               type: "url",
             },
           ],
