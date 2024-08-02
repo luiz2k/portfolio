@@ -117,6 +117,17 @@ export default function ProjectCard({
             </Link>
           )}
 
+          {links.source_code.monorepo && (
+            <Link
+              title="Código fonte da aplicação"
+              href={links.source_code.monorepo}
+              target="_blank"
+              className="flex items-center justify-center gap-1 hover:underline"
+            >
+              <IoLogoGithub /> Código-fonte
+            </Link>
+          )}
+
           {links.visit.demo && (
             <Link
               title="Demonstração do projeto"

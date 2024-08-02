@@ -12,6 +12,7 @@ export interface ProjectCardProps {
     source_code: {
       front_end: string;
       back_end: string;
+      monorepo: string;
     };
   };
   technologies: {
