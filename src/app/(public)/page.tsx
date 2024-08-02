@@ -4,14 +4,13 @@ import Link from "next/link";
 import Badge from "@/components/Badge/Badge";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 
-import { getMainSkills, getMe, getProjects } from "@/api/sanityServices";
+import { getAllProjects, getMainSkills, getMe } from "@/api/sanityServices";
 import { PortableText } from "@portabletext/react";
-import { ModalContextProvider } from "@/contexts/ModalContextProvider";
 
 export default async function Home() {
   const me = await getMe();
   const skills = await getMainSkills();
-  const projects = await getProjects("main");
+  const mainProjects = await getAllProjects("Principais");
 
   return (
     <section className="space-y-24">
@@ -77,7 +76,7 @@ export default async function Home() {
         </h2>
 
         <div className="ml-0 flex flex-wrap  justify-center gap-5 md:ml-5">
-          {projects.map((project) => (
+          {mainProjects.projects.map((project) => (
             <ProjectCard
               key={project.title}
               title={project.title}

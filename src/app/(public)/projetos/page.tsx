@@ -1,12 +1,12 @@
-import { getProjects } from "@/api/sanityServices";
+import { getAllProjects } from "@/api/sanityServices";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 import { ModalContextProvider } from "@/contexts/ModalContextProvider";
 
 import { PiStarFill } from "react-icons/pi";
 
 export default async function Projects() {
-  const mainProjects = await getProjects("main");
-  const otherProjects = await getProjects("others");
+  const mainProjects = await getAllProjects("Principais");
+  const otherProjects = await getAllProjects("Outros");
 
   return (
     <section className="space-y-24">
@@ -23,7 +23,7 @@ export default async function Projects() {
         </h2>
 
         <section className="ml-0 flex flex-wrap justify-center gap-5 md:ml-5">
-          {mainProjects.map((project) => (
+          {mainProjects.projects.map((project) => (
             <ProjectCard
               key={project.title}
               title={project.title}
@@ -42,7 +42,7 @@ export default async function Projects() {
         </h2>
 
         <section className="ml-0 flex flex-wrap justify-center gap-5 md:ml-5">
-          {otherProjects.map((project) => (
+          {otherProjects.projects.map((project) => (
             <ProjectCard
               key={project.title}
               title={project.title}
