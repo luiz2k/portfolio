@@ -22,6 +22,7 @@ export interface Projects {
     source_code: {
       front_end: string;
       back_end: string;
+      monorepo: string;
     };
   };
   technologies: {
@@ -63,6 +64,12 @@ export interface GetAllSkills {
     name: string;
     imageUrl: string;
   }[];
+}
+
+export interface GetAllProjects {
+  _type: string;
+  category: string;
+  projects: Projects[];
 }
 
 export interface GetContacts {

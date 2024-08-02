@@ -1,11 +1,11 @@
 import { client } from "../../sanity/lib/client";
 
 import type {
+  GetAllProjects,
   GetAllSkills,
   GetContacts,
   GetMainSkills,
   Me,
-  Projects,
 } from "./sanityServices.d";
 
 export const getMe = async (): Promise<Me> => {
@@ -36,45 +36,47 @@ export const getMainSkills = async (): Promise<GetMainSkills> => {
   return mainSkills[0];
 };
 
-export const getProjects = async (
-  project: "main" | "others",
-): Promise<Projects[]> => {
-  const projectType: boolean = project === "main" ? true : false;
-
-  const query: string = `*[_type == 'projects' && main_project == '${projectType}'] {
+export const getAllProjects = async (
+  project: "Principais" | "Outros",
+): Promise<GetAllProjects> => {
+  const query: string = `*[_type == 'project_categories' && category == '${project}'] | order(position asc) {
     _type,
-    title,
-    description,
-    'imageUrl': image.asset -> url,
-    'slug': slug.current,
-    main_project,
-    'links': {
-      'visit': {
-        'demo': links.visit.demo,
-        'documentation': links.visit.documentation
+    category,
+    projects[] -> {
+      _id,
+      title,
+      description,
+      'imageUrl': image.asset -> url,
+      'slug': slug.current,
+      'links': {
+        'visit': {
+          'demo': links.visit.demo,
+          'documentation': links.visit.documentation
+        },
+        'source_code': {
+          'front_end': links.source_code.front_end,
+          'back_end': links.source_code.back_end,
+          'monorepo': links.source_code.monorepo
+        }
       },
-      'source_code': {
-        'front_end': links.source_code.front_end,
-        'back_end': links.source_code.back_end
-      }
-    },
-    'technologies': {
-      'front_end': technologies.front_end[] -> {
-        _id,
-        name,
-        'imageUrl': image.asset -> url
+      'technologies': {
+        'front_end': technologies.front_end[] -> {
+          _id,
+          name,
+          'imageUrl': image.asset -> url
+        },
+        'back_end': technologies.back_end[] -> {
+          _id,
+          name,
+          'imageUrl': image.asset -> url
+        }
       },
-      'back_end': technologies.back_end[] -> {
-        _id,
-        name,
-        'imageUrl': image.asset -> url
-      }
-    },
+    }
   }`;
 
-  const projects: Projects[] = await client.fetch(query);
+  const projects: GetAllProjects[] = await client.fetch(query);
 
-  return projects;
+  return projects[0];
 };
 
 export const getAllSkills = async (): Promise<GetAllSkills[]> => {
