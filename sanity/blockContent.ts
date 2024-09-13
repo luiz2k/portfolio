@@ -38,7 +38,7 @@ export default defineType({
         ],
       },
       lists: [],
-      styles: [],
+      styles: [{ title: "Heading 4", value: "h4" }],
     }),
   ],
 });
