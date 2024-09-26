@@ -53,7 +53,7 @@ export default function ProjectCard({
 
           <div className="flex h-full flex-col justify-between space-y-5 px-5 lg:px-0">
             <div className="scroll">
-              <div className="prose h-[7.5rem] overflow-y-scroll pr-2 ">
+              <div className="prose h-[7.5rem] overflow-y-scroll pr-2 dark:prose-invert">
                 <PortableText value={description} />
               </div>
             </div>
