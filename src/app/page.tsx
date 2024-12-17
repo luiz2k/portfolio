@@ -1,7 +1,3 @@
-export function page() {
-  return (
-    <>
-      <h1>Página inicial</h1>
-    </>
-  );
-}
+import { HomePage } from "@/modules/pages/Home/HomePage";
+
+export default HomePage;
