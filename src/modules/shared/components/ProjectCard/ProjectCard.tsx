@@ -24,7 +24,6 @@ export function ProjectCard({
   technologies,
   links,
 }: ProjectCardProps) {
-  console.log(image);
   return (
     <div className="grid w-full max-w-3xl gap-4 rounded-lg p-4 shadow backdrop-blur-xs">
       <div className="grid gap-4 sm:grid-cols-2">
