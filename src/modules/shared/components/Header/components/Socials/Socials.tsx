@@ -6,7 +6,7 @@ export function Socials() {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Github"
+        aria-label="Acessar Github"
         href="http://github.com/luiz2k/"
         className="hover:text-accent"
       >
@@ -15,7 +15,7 @@ export function Socials() {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Linkedin"
+        aria-label="Acessar Linkedin"
         href="https://www.linkedin.com/in/luiz2k/"
         className="hover:text-accent"
       >
