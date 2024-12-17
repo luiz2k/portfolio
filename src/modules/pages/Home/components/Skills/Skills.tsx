@@ -1,10 +1,10 @@
 import { SkillBadge } from "@/modules/shared/components/SkillBadge/SkillBadge";
-import { getAboutMe } from "@/modules/shared/functions/getAboutMe";
+import { getMainInformations } from "@/modules/shared/functions/getInformations";
 import { getIcons } from "@/modules/shared/functions/getIcons";
 import Link from "next/link";
 
 export function Skills() {
-  const aboutMe = getAboutMe();
+  const aboutMe = getMainInformations();
 
   return (
     <section className="grid gap-2">
