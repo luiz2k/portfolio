@@ -46,7 +46,7 @@ export const getMainProjects = (): GetProjects => {
 
   // Filtrando os serviços principais
   const mainServices = fileNames.filter((fileName) => {
-    const slug = fileName.split(".")[0];
+    const slug = fileName.split(".")[0].split("_")[1];
 
     return mainServicesSlug.includes(slug);
   });
