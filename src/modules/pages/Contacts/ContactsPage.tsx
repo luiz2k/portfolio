@@ -16,8 +16,18 @@ export function ContactsPage() {
           title="E-mail"
           description="luiz2k.cv@gmail.com"
         />
-        <ContactCard icon={Github} title="GitHub" description="@luiz2k" />
-        <ContactCard icon={Linkedin} title="LinkedIn" description="@luiz2k" />
+        <ContactCard
+          icon={Github}
+          title="GitHub"
+          description="@luiz2k"
+          href="https://github.com/luiz2k/"
+        />
+        <ContactCard
+          icon={Linkedin}
+          title="LinkedIn"
+          description="@luiz2k"
+          href="https://www.linkedin.com/in/luiz2k/"
+        />
       </div>
     </section>
   );
