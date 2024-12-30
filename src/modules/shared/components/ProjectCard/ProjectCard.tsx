@@ -30,11 +30,11 @@ export function ProjectCard({
         {image && (
           <Image
             src={image}
-            width="1280"
-            height="720"
+            width={360}
+            height={203.38}
             alt={title}
             loading="eager"
-            className="size-full border object-cover"
+            className="border object-cover"
           />
         )}
 
