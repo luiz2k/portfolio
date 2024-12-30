@@ -51,7 +51,11 @@ export function ProjectCard({
 
           <div className="flex gap-2">
             {technologies.map((technologie) => (
-              <SkillBadge key={technologie} icon={getIcons(technologie)} />
+              <SkillBadge
+                key={technologie}
+                icon={getIcons(technologie)}
+                title={technologie}
+              />
             ))}
           </div>
 

@@ -5,8 +5,8 @@ type BadgeType = VariantProps<typeof badgeTV>;
 
 type SkillBadgeProps = BadgeType & {
   icon?: string;
+  name?: string;
   title?: string;
-  ariaLabel?: string;
 };
 
 const badgeTV = tv({
@@ -22,22 +22,22 @@ const badgeTV = tv({
   },
 });
 
-export function SkillBadge({ icon, title, ...rest }: SkillBadgeProps) {
+export function SkillBadge({ icon, name, title, ...rest }: SkillBadgeProps) {
   return (
-    <div className={badgeTV(rest)}>
+    <div className={badgeTV(rest)} title={title}>
       {icon && (
         <div className="size-6">
           <Image
             src={icon}
             width="24"
             height="24"
-            alt={title || "Habilidade"}
+            alt={name || "Habilidade"}
             className="text-accent"
           />
         </div>
       )}
 
-      {title && <p className="text-nowrap">{title}</p>}
+      {name && <p className="text-nowrap">{name}</p>}
     </div>
   );
 }

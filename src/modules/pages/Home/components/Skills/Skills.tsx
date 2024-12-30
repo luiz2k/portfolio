@@ -15,7 +15,7 @@ export function Skills() {
           <SkillBadge
             key={skill}
             icon={getIcons(skill)}
-            title={skill}
+            name={skill}
             width="full"
           />
         ))}
