@@ -1,4 +1,5 @@
 import { HomePage } from "@/modules/pages/Home/HomePage";
+import { setOpengraph } from "@/modules/shared/functions/setOpengraph";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,10 +20,7 @@ export const metadata: Metadata = {
     "backend",
     "fullstack",
   ],
-  openGraph: {
-    url: "https://luiz2k.vercel.app",
-    title: "Portfólio - Início",
-  },
+  openGraph: setOpengraph({ title: "Início" }),
 };
 
 export default HomePage;

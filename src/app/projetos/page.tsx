@@ -1,4 +1,5 @@
 import { ProjectsPage } from "@/modules/pages/Projects/ProjectsPage";
+import { setOpengraph } from "@/modules/shared/functions/setOpengraph";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,10 +12,7 @@ export const metadata: Metadata = {
     "react",
     "nextjs",
   ],
-  openGraph: {
-    url: "https://luiz2k.vercel.app/projetos",
-    title: "Portfólio - Projetos",
-  },
+  openGraph: setOpengraph({ title: "Início", pathname: "/projetos" }),
 };
 
 export default ProjectsPage;

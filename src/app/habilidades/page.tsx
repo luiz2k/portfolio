@@ -1,4 +1,5 @@
 import { SkillsPage } from "@/modules/pages/Skills/SkillsPage";
+import { setOpengraph } from "@/modules/shared/functions/setOpengraph";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,10 +12,7 @@ export const metadata: Metadata = {
     "tailwindcss",
     "nodejs",
   ],
-  openGraph: {
-    url: "https://luiz2k.vercel.app/habilidades",
-    title: "Portfólio - Habilidades",
-  },
+  openGraph: setOpengraph({ title: "Início", pathname: "/habilidades" }),
 };
 
 export default SkillsPage;

@@ -1,4 +1,5 @@
 import { ServicesPage } from "@/modules/pages/Services/ServicesPage";
+import { setOpengraph } from "@/modules/shared/functions/setOpengraph";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,10 +14,7 @@ export const metadata: Metadata = {
     "nextjs",
     "figma",
   ],
-  openGraph: {
-    url: "https://luiz2k.vercel.app/servicos",
-    title: "Portfólio - Serviços",
-  },
+  openGraph: setOpengraph({ title: "Início", pathname: "/servicos" }),
 };
 
 export default ServicesPage;

@@ -1,4 +1,5 @@
 import { ContactsPage } from "@/modules/pages/Contacts/ContactsPage";
+import { setOpengraph } from "@/modules/shared/functions/setOpengraph";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,10 +12,7 @@ export const metadata: Metadata = {
     "github",
     "linkedin",
   ],
-  openGraph: {
-    url: "https://luiz2k.vercel.app/contatos",
-    title: "Portfólio - Contatos",
-  },
+  openGraph: setOpengraph({ title: "Início", pathname: "/contatos" }),
 };
 
 export default ContactsPage;
