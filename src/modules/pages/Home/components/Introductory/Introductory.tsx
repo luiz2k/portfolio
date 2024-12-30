@@ -16,8 +16,9 @@ export function Introductory() {
 
       <Image
         src="/luiz-01.jpg"
-        width={340}
-        height={340}
+        width={240}
+        height={240}
+        quality={100}
         loading="eager"
         alt="Foto do desenvolvedor"
         className="size-60 rounded-full border-2 border-black object-cover"
