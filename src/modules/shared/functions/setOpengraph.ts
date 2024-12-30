@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 type SetOpengraph = {
   title: string;
   pathname?: string;
@@ -20,5 +22,5 @@ export const setOpengraph = ({ title, pathname }: SetOpengraph) => {
         height: 630,
       },
     ],
-  };
+  } as Metadata["openGraph"];
 };
