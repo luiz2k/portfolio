@@ -22,7 +22,7 @@ export function SkillsPage() {
 
             <div className="scroll-sm grid grid-cols-[repeat(auto-fill,9.2rem)] justify-center gap-2 sm:justify-start">
               {category.sklls.map((skill) => (
-                <SkillCard key={skill} icon={getIcons(skill)} title={skill} />
+                <SkillCard key={skill} icon={getIcons(skill)} name={skill} />
               ))}
             </div>
           </section>

@@ -2,10 +2,10 @@ import Image from "next/image";
 
 type SkillCardProps = {
   icon?: string;
-  title?: string;
+  name?: string;
 };
 
-export function SkillCard({ icon, title }: SkillCardProps) {
+export function SkillCard({ icon, name }: SkillCardProps) {
   return (
     <div className="flex size-[9.2rem] flex-col items-center justify-center gap-1 rounded p-1 shadow backdrop-blur-xs">
       {icon && (
@@ -13,12 +13,12 @@ export function SkillCard({ icon, title }: SkillCardProps) {
           src={icon}
           width="75"
           height="75"
-          alt={title || "Habilidade"}
+          alt={name || "Habilidade"}
           className="text-accent"
         />
       )}
 
-      {title && <p>{title}</p>}
+      {name && <p>{name}</p>}
     </div>
   );
 }
