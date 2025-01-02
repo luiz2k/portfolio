@@ -2,10 +2,13 @@ import fs from "fs";
 import matter from "gray-matter";
 
 type GetInformations = {
-  aboutMe: string;
-  mainSkills: string[];
-  mainProjects: string[];
-  mainServices: string[];
+  content: string;
+  data: {
+    aboutMe: string;
+    mainSkills: string[];
+    mainProjects: string[];
+    mainServices: string[];
+  };
 };
 
 // Obtém as informações principais
@@ -16,5 +19,5 @@ export const getMainInformations = (): GetInformations => {
 
   const matters = matter(aboutMe);
 
-  return matters.data as GetInformations;
+  return matters as unknown as GetInformations;
 };

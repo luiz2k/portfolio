@@ -42,7 +42,7 @@ export const getMainProjects = (): GetProjects => {
 
   const fileNames = fs.readdirSync(folder);
 
-  const mainServicesSlug = getMainInformations().mainProjects;
+  const mainServicesSlug = getMainInformations().data.mainProjects;
 
   // Filtrando os serviços principais
   const mainServices = fileNames.filter((fileName) => {

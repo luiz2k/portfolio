@@ -1,4 +1,5 @@
 import { getMainInformations } from "@/modules/shared/functions/getInformations";
+import Markdown from "markdown-to-jsx";
 
 export function AboutMe() {
   const mainInformations = getMainInformations();
@@ -7,7 +8,9 @@ export function AboutMe() {
     <section className="flex flex-col gap-2">
       <h2 className="m-auto text-xl font-bold sm:m-0">Sobre mim</h2>
 
-      <p>{mainInformations.aboutMe}</p>
+      <Markdown>{mainInformations.content}</Markdown>
+
+      <div></div>
     </section>
   );
 }

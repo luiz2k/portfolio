@@ -42,7 +42,7 @@ export const getMainServices = (): GetServices => {
 
   const fileNames = fs.readdirSync(folder);
 
-  const mainServicesSlug = getMainInformations().mainServices;
+  const mainServicesSlug = getMainInformations().data.mainServices;
 
   // Filtrando os serviços principais
   const mainServices = fileNames.filter((fileName) => {

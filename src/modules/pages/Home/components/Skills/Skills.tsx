@@ -11,7 +11,7 @@ export function Skills() {
       <h2 className="m-auto text-xl font-bold sm:m-0">Habilidades</h2>
 
       <div className="scroll-sm flex gap-2 overflow-auto pb-1">
-        {aboutMe.mainSkills.map((skill) => (
+        {aboutMe.data.mainSkills.map((skill) => (
           <SkillBadge
             key={skill}
             icon={getIcons(skill)}

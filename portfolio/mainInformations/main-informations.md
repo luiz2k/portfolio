@@ -1,5 +1,4 @@
 ---
-aboutMe: "Tenho 24 anos, sou um desenvolvedor full stack com foco em Next.JS e Node.JS, graduado em analise e desenvolvimento de sistemas, atualmente em busca de entrar na carreira de desenvolvimento."
 mainSkills:
   [
     "TypeScript",
@@ -12,3 +11,5 @@ mainSkills:
 mainServices: ["pousada-cantareira"]
 mainProjects: ["lista-de-tarefas", "carrinho-de-compras"]
 ---
+
+Tenho 24 anos, sou um desenvolvedor **full stack** com foco em **Next.JS** e **Node.JS**, graduado em **analise e desenvolvimento de sistemas**, atualmente em busca de entrar na carreira de desenvolvimento.
