@@ -1,8 +1,8 @@
-import Markdown from "markdown-to-jsx";
+import Image from "next/image";
 import Link from "next/link";
 import { getIcons } from "../../functions/getIcons";
+import { RenderMarkdown } from "../RenderMarkdown/RenderMarkdown";
 import { SkillBadge } from "../SkillBadge/SkillBadge";
-import Image from "next/image";
 
 type ProjectCardProps = {
   title: string;
@@ -39,13 +39,13 @@ export function ProjectCard({
         )}
 
         <div className="grid gap-2">
-          <h3 className="m-auto text-lg font-medium sm:m-0">{title}</h3>
+          <h3 className="m-auto text-lg font-semibold sm:m-0">{title}</h3>
 
           <hr className="border-1 border-black/10" />
 
-          <Markdown className="scroll-md h-[6.031rem] overflow-auto pr-2">
+          <RenderMarkdown className="scroll-md h-[6.031rem] overflow-auto pr-2">
             {description}
-          </Markdown>
+          </RenderMarkdown>
 
           <hr className="border-1 border-black/10" />
 
