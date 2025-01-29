@@ -15,9 +15,9 @@ type GetInformations = {
 export const getMainInformations = (): GetInformations => {
   const pathAndFile = "portfolio/mainInformations/main-informations.md"; // Pasta e arquivo que contém as informações
 
-  const aboutMe = fs.readFileSync(pathAndFile, "utf-8");
+  const archive = fs.readFileSync(pathAndFile, "utf-8");
 
-  const matters = matter(aboutMe);
+  const matters = matter(archive);
 
   return matters as unknown as GetInformations;
 };

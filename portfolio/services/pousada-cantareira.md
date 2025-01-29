@@ -1,4 +1,5 @@
 ---
+id: 1
 slug: "pousada-cantareira"
 title: "Pousada Cantareira"
 image: "https://i.imgur.com/M9b5pFO.png"
