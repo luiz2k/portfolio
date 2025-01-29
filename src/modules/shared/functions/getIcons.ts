@@ -22,5 +22,6 @@ export const getIcons = (icon: string) => {
     Docker: "/icons/docker.svg",
     Zustand: "/icons/zustand.svg",
     Swagger: "/icons/swagger.svg",
+    Stripe: "/icons/stripe.svg",
   }[icon];
 };
