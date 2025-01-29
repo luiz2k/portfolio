@@ -9,7 +9,7 @@ export function ProjectsPage() {
     <section className="grid gap-10">
       <IntroductoryTitle
         title="Projetos"
-        description="Aqui você pode ver meus projetos pessoais"
+        description="Alguns dos meus projetos pessoais"
       />
 
       <section className="grid gap-5">
