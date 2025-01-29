@@ -27,16 +27,13 @@ export function ProjectCard({
   return (
     <div className="grid w-full max-w-3xl gap-4 rounded-lg p-4 shadow backdrop-blur-xs">
       <div className="grid gap-4 sm:grid-cols-2">
-        {image && (
-          <Image
-            src={image}
-            width={360}
-            height={203.38}
-            alt={title}
-            loading="eager"
-            className="size-full border object-cover"
-          />
-        )}
+        <Image
+          src={image}
+          width={360}
+          height={203.38}
+          alt={title}
+          className="size-full h-[12.711rem] w-[22.5rem] border object-cover"
+        />
 
         <div className="grid gap-2">
           <h3 className="m-auto text-lg font-semibold sm:m-0">{title}</h3>
