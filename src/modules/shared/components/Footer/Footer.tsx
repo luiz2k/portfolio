@@ -44,8 +44,8 @@ export function Footer() {
           src="/luiz-02.jpg"
           width={250}
           height={250}
-          alt="Imagem"
-          className="w-[100px] rounded-full border-2 border-white"
+          alt="Foto do desenvolvedor"
+          className="h-[8.333rem] w-[6.25rem] rounded-full border-2 border-white"
         />
       </div>
     </footer>
