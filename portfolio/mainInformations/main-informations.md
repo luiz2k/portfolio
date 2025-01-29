@@ -12,4 +12,4 @@ mainServices: ["pousada-cantareira"]
 mainProjects: ["game-box", "lista-de-tarefas"]
 ---
 
-Tenho 24 anos, sou um desenvolvedor **full stack** com foco em **Next.JS** e **Node.JS**, graduado em **analise e desenvolvimento de sistemas**, atualmente em busca de entrar na carreira de desenvolvimento.
+Sou um desenvolvedor **full stack**, graduado em **Análise e Desenvolvimento de Sistemas**, foco em tecnologias como **Next.js** e **Node.js**. Estou em busca de oportunidades para iniciar minha carreira na área de desenvolvimento. Gosto bastante de estudar e está sempre atualizado com as novidades.
