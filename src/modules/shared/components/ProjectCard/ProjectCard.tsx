@@ -34,7 +34,7 @@ export function ProjectCard({
             height={203.38}
             alt={title}
             loading="eager"
-            className="border object-cover"
+            className="size-full border object-cover"
           />
         )}
 
