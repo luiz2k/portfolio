@@ -10,7 +10,7 @@ export function SkillsPage() {
     <section className="grid gap-10">
       <IntroductoryTitle
         title="Habilidades"
-        description="Aqui você pode ver minhas habilidades"
+        description="Minhas habilidades como desenvolvedor"
       />
 
       <div className="grid gap-5">
