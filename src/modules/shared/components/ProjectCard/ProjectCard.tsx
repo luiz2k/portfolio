@@ -32,7 +32,7 @@ export function ProjectCard({
           width={360}
           height={203.38}
           alt={title}
-          className="size-full h-[12.711rem] w-[22.5rem] border object-cover"
+          className="size-full w-full border object-cover sm:h-[12.711rem] sm:w-[22.5rem]"
         />
 
         <div className="grid gap-2">
