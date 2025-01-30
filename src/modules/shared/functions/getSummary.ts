@@ -1,7 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 
-type GetInformations = {
+type GetSummary = {
   content: string;
   data: {
     aboutMe: string;
@@ -12,12 +12,12 @@ type GetInformations = {
 };
 
 // Obtém as informações principais
-export const getSummary = (): GetInformations => {
+export const getSummary = (): GetSummary => {
   const pathAndFile = "portfolio/summary/summary.md"; // Pasta e arquivo que contém as informações
 
   const archive = fs.readFileSync(pathAndFile, "utf-8");
 
   const matters = matter(archive);
 
-  return matters as unknown as GetInformations;
+  return matters as unknown as GetSummary;
 };
