@@ -1,6 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
-import { getMainInformations } from "./getInformations";
+import { getSummary } from "./getSummary";
 
 type GetServices = {
   content: string;
@@ -50,7 +50,7 @@ export const getMainServices = (): GetServices => {
 
   const fileNames = fs.readdirSync(folder);
 
-  const mainServicesSlug = getMainInformations().data.mainServices;
+  const mainServicesSlug = getSummary().data.mainServices;
 
   // Filtrando os serviços principais
   const mainServices = fileNames.filter((fileName) => {

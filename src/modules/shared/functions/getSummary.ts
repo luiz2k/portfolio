@@ -12,8 +12,8 @@ type GetInformations = {
 };
 
 // Obtém as informações principais
-export const getMainInformations = (): GetInformations => {
-  const pathAndFile = "portfolio/mainInformations/main-informations.md"; // Pasta e arquivo que contém as informações
+export const getSummary = (): GetInformations => {
+  const pathAndFile = "portfolio/summary/summary.md"; // Pasta e arquivo que contém as informações
 
   const archive = fs.readFileSync(pathAndFile, "utf-8");
 

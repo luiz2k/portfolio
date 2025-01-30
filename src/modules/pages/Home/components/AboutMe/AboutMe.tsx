@@ -1,8 +1,8 @@
 import { RenderMarkdown } from "@/modules/shared/components/RenderMarkdown/RenderMarkdown";
-import { getMainInformations } from "@/modules/shared/functions/getInformations";
+import { getSummary } from "@/modules/shared/functions/getSummary";
 
 export function AboutMe() {
-  const mainInformations = getMainInformations();
+  const mainInformations = getSummary();
 
   return (
     <section className="flex flex-col gap-2">
