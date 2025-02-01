@@ -13,7 +13,7 @@ export const setOpengraph = ({ title, pathname }: SetOpengraph) => {
       : "https://luiz2k.vercel.app",
     type: "website",
     description:
-      "Olá, Me chamo Luiz, Tenho 24 anos, sou um desenvolvedor full stack com foco em Next.JS e Node.JS, e sou graduado em analise e desenvolvimento de sistemas.",
+      "Desenvolvedor Full Stack especializado em Next.js, Node.js e TypeScript. Confira meus projetos e habilidades no meu portfólio! 🚀",
     siteName: "Portfólio - Luiz Teles",
     images: [
       {
