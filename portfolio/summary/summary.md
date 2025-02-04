@@ -12,4 +12,4 @@ mainServices: ["pousada-cantareira"]
 mainProjects: ["game-box", "lista-de-tarefas"]
 ---
 
-Sou um desenvolvedor **full stack**, graduado em **Análise e Desenvolvimento de Sistemas**, foco em tecnologias como **Next.js** e **Node.js**. Estou em busca de oportunidades para iniciar minha carreira na área de desenvolvimento. Gosto bastante de estudar e está sempre atualizado com as novidades.
+Sou desenvolvedor graduado em **Análise e Desenvolvimento de Sistemas**, com foco em tecnologias como **Next.js** e **Node.js**. Busco oportunidades para crescer na área de desenvolvimento e colocar meus conhecimentos em prática. Estou sempre estudando coisas novas e me atualizando com as últimas novidades.
