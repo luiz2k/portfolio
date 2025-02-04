@@ -6,7 +6,6 @@ image: "https://i.imgur.com/M9b5pFO.png"
 technologies: ["TypeScript", "Astro", "Tailwind CSS"]
 links:
   {
-    figma: "https://www.figma.com/design/PwwTwBJn8f11xRVsMMT16x/Pousada-Cantareira?node-id=0-1&t=qkk0Jn5cmLY2sF2c-1",
     demo: "https://pousadacantareira.com.br/",
   }
 ---
