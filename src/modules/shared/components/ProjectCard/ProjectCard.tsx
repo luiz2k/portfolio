@@ -25,14 +25,14 @@ export function ProjectCard({
   links,
 }: ProjectCardProps) {
   return (
-    <div className="grid w-full max-w-3xl gap-4 rounded-lg p-4 shadow backdrop-blur-xs">
+    <div className="grid w-full max-w-3xl gap-4 rounded-lg p-4 shadow-sm backdrop-blur-xs">
       <div className="grid gap-4 sm:grid-cols-2">
         <Image
           src={image}
           width={360}
           height={203.38}
           alt={title}
-          className="size-full w-full border object-cover sm:h-[12.711rem] sm:w-[22.5rem]"
+          className="size-full w-full border border-gray-200 object-cover sm:h-[12.711rem] sm:w-[22.5rem]"
         />
 
         <div className="grid gap-2">

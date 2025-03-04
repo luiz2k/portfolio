@@ -26,7 +26,7 @@ export function NavigationAnchor({
       data-currentpage={currentPage}
       onMouseEnter={() => router.prefetch(href)} // Precarrega a página
       ref={ref} // Passa o ref para o Link
-      className="text-black hover:text-accent data-[currentpage=true]:pointer-events-none data-[currentpage=true]:cursor-text data-[currentpage=true]:font-bold data-[currentpage=true]:text-accent"
+      className="hover:text-accent data-[currentpage=true]:text-accent text-black data-[currentpage=true]:pointer-events-none data-[currentpage=true]:cursor-text data-[currentpage=true]:font-bold"
       {...rest}
     >
       {children}

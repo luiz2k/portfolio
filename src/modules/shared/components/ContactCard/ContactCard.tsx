@@ -21,7 +21,7 @@ export function ContactCard({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative flex size-[15.167rem] flex-col flex-wrap items-center justify-center gap-2 rounded shadow backdrop-blur-xs"
+          className="relative flex size-[15.167rem] flex-col flex-wrap items-center justify-center gap-2 rounded-sm shadow-sm backdrop-blur-xs"
         >
           {Icon && (
             <Icon size="100" strokeWidth="1.5" className="text-accent" />
@@ -32,10 +32,10 @@ export function ContactCard({
             {description && <p>{description}</p>}
           </div>
 
-          <ExternalLink className="absolute right-2 top-2" size="20" />
+          <ExternalLink className="absolute top-2 right-2" size="20" />
         </Link>
       ) : (
-        <div className="flex size-[15.167rem] flex-col flex-wrap items-center justify-center gap-2 rounded shadow backdrop-blur-xs">
+        <div className="flex size-[15.167rem] flex-col flex-wrap items-center justify-center gap-2 rounded-sm shadow-sm backdrop-blur-xs">
           {Icon && (
             <Icon size="100" strokeWidth="1.5" className="text-accent" />
           )}

@@ -10,7 +10,7 @@ type SkillBadgeProps = BadgeType & {
 };
 
 const badgeTV = tv({
-  base: "flex justify-center gap-1 rounded p-1 shadow backdrop-blur-xs h-fit",
+  base: "flex justify-center gap-1 rounded-sm p-1 shadow-sm backdrop-blur-xs h-fit",
   variants: {
     width: {
       fit: "w-fit",

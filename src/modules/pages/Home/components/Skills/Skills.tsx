@@ -23,7 +23,7 @@ export function Skills() {
 
       <Link
         href="/habilidades"
-        className="m-auto hover:underline sm:ml-auto sm:mr-0"
+        className="m-auto hover:underline sm:mr-0 sm:ml-auto"
       >
         VER MAIS
       </Link>

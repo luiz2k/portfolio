@@ -23,12 +23,12 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className="bg-white after:fixed after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-[url('/grid.webp')] after:opacity-[5%] after:content-['']"
+      className="bg-white after:fixed after:top-0 after:left-0 after:-z-10 after:h-full after:w-full after:bg-[url('/grid.webp')] after:opacity-[5%] after:content-['']"
     >
       <body className={roboto.className}>
         <Header />
 
-        <div className="mx-3.5 min-h-screen pb-10 pt-[7.688rem]">
+        <div className="mx-3.5 min-h-screen pt-[7.688rem] pb-10">
           <main className="m-auto max-w-3xl">{children}</main>
         </div>
 
