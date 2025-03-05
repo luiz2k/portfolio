@@ -1,5 +1,6 @@
 import { ExternalLink, LucideProps } from "lucide-react";
 import Link from "next/link";
+import { PixelWrapper } from "./components/PixelWrapper/PixelWrapper";
 
 type ContactCardProps = {
   icon: React.ComponentType<LucideProps>;
@@ -14,37 +15,44 @@ export function ContactCard({
   description,
   href,
 }: ContactCardProps) {
+  const className: string =
+    "absolute flex size-[15.167rem] flex-col flex-wrap items-center justify-center gap-2 rounded-sm backdrop-blur-xs duration-200 hover:backdrop-blur-none";
+
   return (
     <>
       {href ? (
-        <Link
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="relative flex size-[15.167rem] flex-col flex-wrap items-center justify-center gap-2 rounded-sm shadow-sm backdrop-blur-xs"
-        >
-          {Icon && (
-            <Icon size="100" strokeWidth="1.5" className="text-accent" />
-          )}
+        <PixelWrapper>
+          <Link
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={className}
+          >
+            {Icon && (
+              <Icon size="100" strokeWidth="1.5" className="text-accent" />
+            )}
 
-          <div className="grid place-items-center gap-1">
-            {title && <p className="font-bold">{title}</p>}
-            {description && <p>{description}</p>}
-          </div>
+            <div className="grid place-items-center gap-1">
+              {title && <p className="font-bold">{title}</p>}
+              {description && <p>{description}</p>}
+            </div>
 
-          <ExternalLink className="absolute top-2 right-2" size="20" />
-        </Link>
+            <ExternalLink className="absolute top-2 right-2" size="20" />
+          </Link>
+        </PixelWrapper>
       ) : (
-        <div className="flex size-[15.167rem] flex-col flex-wrap items-center justify-center gap-2 rounded-sm shadow-sm backdrop-blur-xs">
-          {Icon && (
-            <Icon size="100" strokeWidth="1.5" className="text-accent" />
-          )}
+        <PixelWrapper>
+          <div className={className}>
+            {Icon && (
+              <Icon size="100" strokeWidth="1.5" className="text-accent" />
+            )}
 
-          <div className="grid place-items-center gap-1">
-            {title && <p className="font-bold">{title}</p>}
-            {description && <p>{description}</p>}
+            <div className="grid place-items-center gap-1">
+              {title && <p className="font-bold">{title}</p>}
+              {description && <p>{description}</p>}
+            </div>
           </div>
-        </div>
+        </PixelWrapper>
       )}
     </>
   );

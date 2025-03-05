@@ -1,6 +1,6 @@
 import { ContactCard } from "@/modules/shared/components/ContactCard/ContactCard";
 import { IntroductoryTitle } from "@/modules/shared/components/IntroductoryTitle/IntroductoryTitle";
-import { AtSign, Github, Linkedin } from "lucide-react";
+import { contacts } from "./constants/contacts";
 
 export function ContactsPage() {
   return (
@@ -11,23 +11,15 @@ export function ContactsPage() {
       />
 
       <div className="grid grid-cols-[repeat(auto-fill,15.166rem)] justify-center gap-5">
-        <ContactCard
-          icon={AtSign}
-          title="E-mail"
-          description="luiz2k.cv@gmail.com"
-        />
-        <ContactCard
-          icon={Github}
-          title="GitHub"
-          description="@luiz2k"
-          href="https://github.com/luiz2k/"
-        />
-        <ContactCard
-          icon={Linkedin}
-          title="LinkedIn"
-          description="@luiz2k"
-          href="https://www.linkedin.com/in/luiz2k/"
-        />
+        {contacts.map((contact) => (
+          <ContactCard
+            key={contact.title}
+            icon={contact.icon}
+            title={contact.title}
+            description={contact.description}
+            href={contact.href}
+          />
+        ))}
       </div>
     </section>
   );
