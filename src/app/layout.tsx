@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 
 import "@/styles/globals.css";
+import { ClickEffect } from "@/modules/pages/ClickEffect/ClickEffect";
 
 export const metadata: Metadata = {
   description:
@@ -26,13 +27,15 @@ export default function RootLayout({
       className="bg-white after:fixed after:top-0 after:left-0 after:-z-10 after:h-full after:w-full after:bg-[url('/grid.webp')] after:opacity-[5%] after:content-['']"
     >
       <body className={roboto.className}>
-        <Header />
+        <ClickEffect>
+          <Header />
 
-        <div className="mx-3.5 min-h-screen pt-[7.688rem] pb-10">
-          <main className="m-auto max-w-3xl">{children}</main>
-        </div>
+          <div className="mx-3.5 min-h-screen pt-[7.688rem] pb-10">
+            <main className="m-auto max-w-3xl">{children}</main>
+          </div>
 
-        <Footer />
+          <Footer />
+        </ClickEffect>
       </body>
     </html>
   );
