@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { PixelWrapper } from "./components/PixelWrapper/PixelWrapper";
+import { SpotlightWrapper } from "./components/SpotlightWrapper/SpotlightWrapper";
 
 type SkillCardProps = {
   icon?: string;
@@ -9,9 +9,9 @@ type SkillCardProps = {
 
 export function SkillCard({ icon, name, title }: SkillCardProps) {
   return (
-    <PixelWrapper>
+    <SpotlightWrapper>
       <div
-        className="absolute flex size-[9.2rem] flex-col items-center justify-center gap-1 rounded-sm p-1 backdrop-blur-xs duration-200 hover:backdrop-blur-none"
+        className="flex size-[9.2rem] flex-col items-center justify-center gap-1 p-1 backdrop-blur-xs"
         title={title}
       >
         {icon && (
@@ -26,6 +26,6 @@ export function SkillCard({ icon, name, title }: SkillCardProps) {
 
         {name && <p>{name}</p>}
       </div>
-    </PixelWrapper>
+    </SpotlightWrapper>
   );
 }
