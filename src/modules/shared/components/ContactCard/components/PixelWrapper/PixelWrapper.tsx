@@ -7,7 +7,8 @@ export function PixelWrapper({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <PixelCard
-      variant="default"
+      colors="#c39b4b"
+      gap={16}
       className="h-[15.167rem]! w-full rounded-sm border-none shadow-sm"
     >
       {children}
