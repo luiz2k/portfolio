@@ -19,6 +19,7 @@ interface DecryptedTextProps {
   encryptedClassName?: string;
   parentClassName?: string;
   animateOn?: "view" | "hover";
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
 
@@ -131,6 +132,7 @@ export default function DecryptedText({
 
     if (isHovering) {
       setIsScrambling(true);
+      // @ts-expect-error ignore
       interval = setInterval(() => {
         setRevealedIndices((prevRevealed) => {
           if (sequential) {

@@ -178,7 +178,9 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
 
       const data = dataTexture.image.data;
       for (let i = 0; i < size * size; i++) {
+        // @ts-expect-error ignore
         data[i * 4] *= relaxation;
+        // @ts-expect-error ignore
         data[i * 4 + 1] *= relaxation;
       }
 
@@ -193,7 +195,9 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
           if (distSq < maxDist * maxDist) {
             const index = 4 * (i + size * j);
             const power = Math.min(maxDist / Math.sqrt(distSq), 10);
+            // @ts-expect-error ignore
             data[index] += strength * 100 * mouseState.vX * power;
+            // @ts-expect-error ignore
             data[index + 1] -= strength * 100 * mouseState.vY * power;
           }
         }
