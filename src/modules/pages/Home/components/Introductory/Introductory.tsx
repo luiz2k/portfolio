@@ -1,5 +1,4 @@
-"use client";
-
+import { DecipherText } from "./components/DecipherText/DecipherText";
 import { GirdImage } from "./components/GirdImage/GirdImage";
 
 export function Introductory() {
@@ -10,10 +9,7 @@ export function Introductory() {
           Olá, eu me chamo <strong>Luiz</strong>
         </p>
 
-        <h1 className="text-accent flex flex-col items-center text-5xl font-bold md:items-stretch md:text-6xl">
-          <span>Desenvolvedor</span>
-          <span>Full Stack</span>
-        </h1>
+        <DecipherText />
       </div>
 
       <GirdImage />
