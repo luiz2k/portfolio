@@ -1,6 +1,6 @@
 import { ExternalLink, LucideProps } from "lucide-react";
 import Link from "next/link";
-import { PixelWrapper } from "./components/PixelWrapper/PixelWrapper";
+import { SpotlightWrapper } from "./components/SpotlightWrapper/SpotlightWrapper";
 
 type ContactCardProps = {
   icon: React.ComponentType<LucideProps>;
@@ -16,12 +16,12 @@ export function ContactCard({
   href,
 }: ContactCardProps) {
   const className: string =
-    "absolute flex size-[15.167rem] flex-col flex-wrap items-center justify-center gap-2 rounded-sm backdrop-blur-xs duration-200 hover:backdrop-blur-none";
+    "flex size-[15.167rem] flex-col flex-wrap items-center justify-center gap-2 rounded-sm backdrop-blur-xs ";
 
   return (
     <>
       {href ? (
-        <PixelWrapper>
+        <SpotlightWrapper>
           <Link
             href={href}
             target="_blank"
@@ -39,9 +39,9 @@ export function ContactCard({
 
             <ExternalLink className="absolute top-2 right-2" size="20" />
           </Link>
-        </PixelWrapper>
+        </SpotlightWrapper>
       ) : (
-        <PixelWrapper>
+        <SpotlightWrapper>
           <div className={className}>
             {Icon && (
               <Icon size="100" strokeWidth="1.5" className="text-accent" />
@@ -52,7 +52,7 @@ export function ContactCard({
               {description && <p>{description}</p>}
             </div>
           </div>
-        </PixelWrapper>
+        </SpotlightWrapper>
       )}
     </>
   );
