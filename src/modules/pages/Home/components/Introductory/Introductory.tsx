@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+
+import { GirdImage } from "./components/GirdImage/GirdImage";
 
 export function Introductory() {
   return (
@@ -14,15 +16,7 @@ export function Introductory() {
         </h1>
       </div>
 
-      <Image
-        src="/luiz-01.jpg"
-        width={240}
-        height={240}
-        quality={100}
-        loading="eager"
-        alt="Foto do desenvolvedor"
-        className="size-60 rounded-full border-2 border-black object-cover"
-      />
+      <GirdImage />
     </section>
   );
 }
