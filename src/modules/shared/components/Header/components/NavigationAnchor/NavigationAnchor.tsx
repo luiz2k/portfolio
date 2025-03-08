@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { twMerge } from "tailwind-merge";
 
 type HeaderAnchorProps = React.ComponentProps<typeof Link> & {
   href: string;
@@ -26,7 +27,10 @@ export function NavigationAnchor({
       data-currentpage={currentPage}
       onMouseEnter={() => router.prefetch(href)} // Precarrega a página
       ref={ref} // Passa o ref para o Link
-      className="hover:text-accent data-[currentpage=true]:text-accent text-black data-[currentpage=true]:pointer-events-none data-[currentpage=true]:cursor-text data-[currentpage=true]:font-bold"
+      className={twMerge(
+        "hover:text-accent",
+        currentPage && "text-accent pointer-events-none cursor-text font-bold",
+      )}
       {...rest}
     >
       {children}
