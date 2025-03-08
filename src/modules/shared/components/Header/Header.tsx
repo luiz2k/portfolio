@@ -23,7 +23,7 @@ export function Header() {
       data-open={isOpen}
       className={`fixed top-5 left-1/2 z-10 w-full -translate-x-1/2 px-3.5 ${isOpen && "bottom-5"}`}
     >
-      <header className="m-auto flex h-full w-full max-w-3xl flex-col-reverse justify-between gap-5 rounded-2xl p-5 shadow-sm backdrop-blur-lg sm:flex-row">
+      <header className="m-auto flex h-full w-full max-w-3xl flex-col-reverse justify-between gap-5 rounded-2xl p-5 shadow-sm backdrop-blur-lg sm:h-auto sm:flex-row">
         {/* Navegação no mobile */}
         {isOpen && (
           <div className="h-full sm:hidden">
