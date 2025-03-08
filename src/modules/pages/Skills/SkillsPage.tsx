@@ -1,3 +1,7 @@
+import {
+  RevealDown,
+  RevealUp,
+} from "@/modules/shared/components/animations/ReavelAnimations/ReavelAnimations";
 import { IntroductoryTitle } from "@/modules/shared/components/IntroductoryTitle/IntroductoryTitle";
 import { SkillCard } from "@/modules/shared/components/SkillCard/SkillCard";
 import { getIcons } from "@/modules/shared/functions/getIcons";
@@ -16,15 +20,21 @@ export function SkillsPage() {
       <div className="grid gap-5">
         {skills.skills.map((category) => (
           <section key={category.category} className="grid gap-2">
-            <h2 className="text-center text-xl font-bold sm:text-start">
+            <RevealUp
+              as="h1"
+              className="text-center text-xl font-bold sm:text-start"
+            >
               {category.category}
-            </h2>
+            </RevealUp>
 
-            <div className="scroll-sm grid grid-cols-[repeat(auto-fill,9.2rem)] justify-center gap-2 sm:justify-start">
+            <RevealDown
+              as="div"
+              className="scroll-sm grid grid-cols-[repeat(auto-fill,9.2rem)] justify-center gap-2 sm:justify-start"
+            >
               {category.sklls.map((skill) => (
                 <SkillCard key={skill} icon={getIcons(skill)} name={skill} />
               ))}
-            </div>
+            </RevealDown>
           </section>
         ))}
       </div>

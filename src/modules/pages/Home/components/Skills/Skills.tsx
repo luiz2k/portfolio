@@ -1,3 +1,7 @@
+import {
+  RevealDown,
+  RevealUp,
+} from "@/modules/shared/components/animations/ReavelAnimations/ReavelAnimations";
 import { SkillBadge } from "@/modules/shared/components/SkillBadge/SkillBadge";
 import { getIcons } from "@/modules/shared/functions/getIcons";
 import { getSummary } from "@/modules/shared/functions/getSummary";
@@ -9,7 +13,9 @@ export function Skills() {
 
   return (
     <section className="grid gap-2">
-      <h2 className="m-auto text-xl font-bold sm:m-0">Habilidades</h2>
+      <RevealUp as="h2" className="m-auto text-xl font-bold sm:m-0">
+        Habilidades
+      </RevealUp>
 
       <Marquee
         pauseOnHover
@@ -25,12 +31,11 @@ export function Skills() {
         ))}
       </Marquee>
 
-      <Link
-        href="/habilidades"
-        className="m-auto hover:underline sm:mr-0 sm:ml-auto"
-      >
-        VER MAIS
-      </Link>
+      <RevealDown as="span" className="m-auto sm:mr-0 sm:ml-auto">
+        <Link href="/habilidades" className="hover:underline">
+          VER MAIS
+        </Link>
+      </RevealDown>
     </section>
   );
 }

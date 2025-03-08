@@ -1,6 +1,7 @@
 import { ExternalLink, LucideProps } from "lucide-react";
 import Link from "next/link";
 import { SpotlightWrapper } from "./components/SpotlightWrapper/SpotlightWrapper";
+import { RevealDown } from "../animations/ReavelAnimations/ReavelAnimations";
 
 type ContactCardProps = {
   icon: React.ComponentType<LucideProps>;
@@ -19,7 +20,7 @@ export function ContactCard({
     "flex size-[15.167rem] flex-col flex-wrap items-center justify-center gap-2 rounded-sm backdrop-blur-xs ";
 
   return (
-    <>
+    <RevealDown as="div">
       {href ? (
         <SpotlightWrapper>
           <Link
@@ -54,6 +55,6 @@ export function ContactCard({
           </div>
         </SpotlightWrapper>
       )}
-    </>
+    </RevealDown>
   );
 }
