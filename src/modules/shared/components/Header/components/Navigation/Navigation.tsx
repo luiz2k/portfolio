@@ -1,7 +1,7 @@
 import { NavigationAnchor } from "../NavigationAnchor/NavigationAnchor";
 
 type NavigationProps = {
-  handleNavigation: () => void;
+  handleNavigation?: () => void;
 };
 export function Navigation({ handleNavigation }: NavigationProps) {
   return (

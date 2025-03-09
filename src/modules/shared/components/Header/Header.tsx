@@ -38,7 +38,7 @@ export function Header() {
 
         {/* Navegação no desktop */}
         <div className="hidden sm:block">
-          <Navigation handleNavigation={handleNavigation} />
+          <Navigation />
         </div>
 
         <div className="flex w-full justify-between sm:w-fit">
