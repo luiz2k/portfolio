@@ -32,13 +32,13 @@ export function Header() {
           <div className="h-full sm:hidden">
             <hr className="sm:hidden" />
 
-            <Navigation />
+            <Navigation handleNavigation={handleNavigation} />
           </div>
         )}
 
         {/* Navegação no desktop */}
         <div className="hidden sm:block">
-          <Navigation />
+          <Navigation handleNavigation={handleNavigation} />
         </div>
 
         <div className="flex w-full justify-between sm:w-fit">
