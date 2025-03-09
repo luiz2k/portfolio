@@ -22,7 +22,7 @@ export function Header() {
   return (
     <div
       className={twMerge(
-        "fixed top-5 left-1/2 z-10 w-full -translate-x-1/2 px-3.5",
+        "fixed top-3.5 left-1/2 z-10 w-full -translate-x-1/2 px-3.5",
         isOpen && "bottom-5",
       )}
     >
