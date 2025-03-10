@@ -10,6 +10,7 @@ technologies:
     "Tailwind CSS",
     "Zustand",
     "Prisma",
+    "Auth.JS",
     "Stripe"
   ]
 links:
