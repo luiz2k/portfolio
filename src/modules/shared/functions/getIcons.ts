@@ -23,5 +23,6 @@ export const getIcons = (icon: string) => {
     Zustand: "/icons/zustand.svg",
     Swagger: "/icons/swagger.svg",
     Stripe: "/icons/stripe.svg",
+    "Auth.JS": "/icons/auth-js.svg",
   }[icon];
 };
