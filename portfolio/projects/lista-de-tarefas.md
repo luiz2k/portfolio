@@ -17,7 +17,7 @@ links:
   {
     sourceCode: "https://github.com/luiz2k/lista-de-tarefas/",
     demo: "https://listadetarefas-luiz2k.vercel.app/",
-    docs: "https://casual-marian-luiz2k-1da44f5e.koyeb.app/docs/",
+    docs: "https://homely-frankie-luiz2k-ae071655.koyeb.app/docs/",
   }
 ---
 
