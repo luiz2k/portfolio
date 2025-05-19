@@ -8,10 +8,8 @@ export function RenderMarkdown({ children, ...props }: CustomMarkdownProps) {
     <Markdown
       options={{
         overrides: {
-          strong: {
-            component: "strong",
-            props: { className: "font-medium" },
-          },
+          strong: { component: "strong", props: { className: "font-medium" } },
+          ul: { component: "ul", props: { className: "list-disc pl-5" } },
         },
       }}
       {...props}
